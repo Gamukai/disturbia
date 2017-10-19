@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
+		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
+		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
+		B520E8641F98ECA90086461C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8631F98ECA90086461C /* GameScene.m */; };
+		B520E8671F98ECA90086461C /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8661F98ECA90086461C /* GameViewController.m */; };
+		B520E86A1F98ECA90086461C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B520E8681F98ECA90086461C /* Main.storyboard */; };
+		B520E86C1F98ECA90086461C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B520E86B1F98ECA90086461C /* Assets.xcassets */; };
+		B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */; };
+		B520E8721F98ECA90086461C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8711F98ECA90086461C /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B520E85E1F98ECA90086461C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B520E8601F98ECA90086461C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		B520E8621F98ECA90086461C /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		B520E8631F98ECA90086461C /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		B520E8651F98ECA90086461C /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		B520E8661F98ECA90086461C /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		B520E8691F98ECA90086461C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B520E86B1F98ECA90086461C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B520E86E1F98ECA90086461C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B520E8701F98ECA90086461C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B520E8711F98ECA90086461C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B520E8551F98ECA90086461C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B520E84F1F98ECA90086461C = {
+			isa = PBXGroup;
+			children = (
+				B520E85A1F98ECA90086461C /* DisturbiaGame */,
+				B520E8591F98ECA90086461C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B520E8591F98ECA90086461C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8581F98ECA90086461C /* DisturbiaGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
+			isa = PBXGroup;
+			children = (
+				B520E85B1F98ECA90086461C /* AppDelegate.h */,
+				B520E85C1F98ECA90086461C /* AppDelegate.m */,
+				B520E85E1F98ECA90086461C /* GameScene.sks */,
+				B520E8601F98ECA90086461C /* Actions.sks */,
+				B520E8621F98ECA90086461C /* GameScene.h */,
+				B520E8631F98ECA90086461C /* GameScene.m */,
+				B520E8651F98ECA90086461C /* GameViewController.h */,
+				B520E8661F98ECA90086461C /* GameViewController.m */,
+				B520E8681F98ECA90086461C /* Main.storyboard */,
+				B520E86B1F98ECA90086461C /* Assets.xcassets */,
+				B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */,
+				B520E8701F98ECA90086461C /* Info.plist */,
+				B520E8711F98ECA90086461C /* main.m */,
+			);
+			path = DisturbiaGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B520E8571F98ECA90086461C /* DisturbiaGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B520E8751F98ECA90086461C /* Build configuration list for PBXNativeTarget "DisturbiaGame" */;
+			buildPhases = (
+				B520E8541F98ECA90086461C /* Sources */,
+				B520E8551F98ECA90086461C /* Frameworks */,
+				B520E8561F98ECA90086461C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DisturbiaGame;
+			productName = DisturbiaGame;
+			productReference = B520E8581F98ECA90086461C /* DisturbiaGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B520E8501F98ECA90086461C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Augusto Falcão";
+				TargetAttributes = {
+					B520E8571F98ECA90086461C = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B520E8531F98ECA90086461C /* Build configuration list for PBXProject "DisturbiaGame" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B520E84F1F98ECA90086461C;
+			productRefGroup = B520E8591F98ECA90086461C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B520E8571F98ECA90086461C /* DisturbiaGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B520E8561F98ECA90086461C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B520E86A1F98ECA90086461C /* Main.storyboard in Resources */,
+				B520E85F1F98ECA90086461C /* GameScene.sks in Resources */,
+				B520E86C1F98ECA90086461C /* Assets.xcassets in Resources */,
+				B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */,
+				B520E8611F98ECA90086461C /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B520E8541F98ECA90086461C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
+				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
+				B520E8721F98ECA90086461C /* main.m in Sources */,
+				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B520E8681F98ECA90086461C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B520E8691F98ECA90086461C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B520E86E1F98ECA90086461C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B520E8731F98ECA90086461C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B520E8741F98ECA90086461C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B520E8761F98ECA90086461C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9563KMS4F;
+				INFOPLIST_FILE = DisturbiaGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.falcaoaugustos.DisturbiaGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B520E8771F98ECA90086461C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9563KMS4F;
+				INFOPLIST_FILE = DisturbiaGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.falcaoaugustos.DisturbiaGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B520E8531F98ECA90086461C /* Build configuration list for PBXProject "DisturbiaGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B520E8731F98ECA90086461C /* Debug */,
+				B520E8741F98ECA90086461C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B520E8751F98ECA90086461C /* Build configuration list for PBXNativeTarget "DisturbiaGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B520E8761F98ECA90086461C /* Debug */,
+				B520E8771F98ECA90086461C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B520E8501F98ECA90086461C /* Project object */;
+}
