@@ -38,6 +38,7 @@
 		B520E8E21F999FC20086461C /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E11F999FC20086461C /* Ground.m */; };
 		B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E51F99A16A0086461C /* PauseLabel.m */; };
 		B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E91F99A2FB0086461C /* PauseButton.m */; };
+		B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8ED1F99A3F20086461C /* InsanityBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		B520E8E51F99A16A0086461C /* PauseLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseLabel.m; sourceTree = "<group>"; };
 		B520E8E81F99A2FB0086461C /* PauseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PauseButton.h; sourceTree = "<group>"; };
 		B520E8E91F99A2FB0086461C /* PauseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseButton.m; sourceTree = "<group>"; };
+		B520E8EC1F99A3F20086461C /* InsanityBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsanityBar.h; sourceTree = "<group>"; };
+		B520E8ED1F99A3F20086461C /* InsanityBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsanityBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,7 @@
 		B520E8DE1F999F8F0086461C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B520E8EB1F99A3CD0086461C /* InsanityBar */,
 				B520E8E71F99A2800086461C /* PauseButton */,
 				B520E8E31F99A1580086461C /* PauseLabel */,
 				B520E8DF1F999F9E0086461C /* Ground */,
@@ -284,6 +288,15 @@
 				B520E8E91F99A2FB0086461C /* PauseButton.m */,
 			);
 			path = PauseButton;
+			sourceTree = "<group>";
+		};
+		B520E8EB1F99A3CD0086461C /* InsanityBar */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8EC1F99A3F20086461C /* InsanityBar.h */,
+				B520E8ED1F99A3F20086461C /* InsanityBar.m */,
+			);
+			path = InsanityBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +397,7 @@
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
 				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
+				B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
