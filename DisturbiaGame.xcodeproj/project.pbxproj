@@ -65,13 +65,11 @@
 		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				B520E87A1F9994DA0086461C /* Scenes */,
 				B520E8781F98EEA80086461C /* Controllers */,
 				B520E85B1F98ECA90086461C /* AppDelegate.h */,
 				B520E85C1F98ECA90086461C /* AppDelegate.m */,
-				B520E85E1F98ECA90086461C /* GameScene.sks */,
 				B520E8601F98ECA90086461C /* Actions.sks */,
-				B520E8621F98ECA90086461C /* GameScene.h */,
-				B520E8631F98ECA90086461C /* GameScene.m */,
 				B520E8681F98ECA90086461C /* Main.storyboard */,
 				B520E86B1F98ECA90086461C /* Assets.xcassets */,
 				B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */,
@@ -96,6 +94,24 @@
 				B520E8661F98ECA90086461C /* GameViewController.m */,
 			);
 			path = MainGame;
+			sourceTree = "<group>";
+		};
+		B520E87A1F9994DA0086461C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B520E87B1F9994E60086461C /* GameScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B520E87B1F9994E60086461C /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				B520E85E1F98ECA90086461C /* GameScene.sks */,
+				B520E8621F98ECA90086461C /* GameScene.h */,
+				B520E8631F98ECA90086461C /* GameScene.m */,
+			);
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
