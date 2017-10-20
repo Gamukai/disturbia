@@ -39,6 +39,7 @@
 		B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E51F99A16A0086461C /* PauseLabel.m */; };
 		B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E91F99A2FB0086461C /* PauseButton.m */; };
 		B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8ED1F99A3F20086461C /* InsanityBar.m */; };
+		B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F11F99A52A0086461C /* ObstacleScientist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		B520E8E91F99A2FB0086461C /* PauseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseButton.m; sourceTree = "<group>"; };
 		B520E8EC1F99A3F20086461C /* InsanityBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsanityBar.h; sourceTree = "<group>"; };
 		B520E8ED1F99A3F20086461C /* InsanityBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsanityBar.m; sourceTree = "<group>"; };
+		B520E8F01F99A52A0086461C /* ObstacleScientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObstacleScientist.h; sourceTree = "<group>"; };
+		B520E8F11F99A52A0086461C /* ObstacleScientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObstacleScientist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,7 @@
 		B520E8DE1F999F8F0086461C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B520E8EF1F99A50C0086461C /* ObstacleScientist */,
 				B520E8EB1F99A3CD0086461C /* InsanityBar */,
 				B520E8E71F99A2800086461C /* PauseButton */,
 				B520E8E31F99A1580086461C /* PauseLabel */,
@@ -297,6 +301,15 @@
 				B520E8ED1F99A3F20086461C /* InsanityBar.m */,
 			);
 			path = InsanityBar;
+			sourceTree = "<group>";
+		};
+		B520E8EF1F99A50C0086461C /* ObstacleScientist */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8F01F99A52A0086461C /* ObstacleScientist.h */,
+				B520E8F11F99A52A0086461C /* ObstacleScientist.m */,
+			);
+			path = ObstacleScientist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
+				B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
