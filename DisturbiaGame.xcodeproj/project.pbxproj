@@ -17,6 +17,7 @@
 		B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */; };
 		B520E8721F98ECA90086461C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8711F98ECA90086461C /* main.m */; };
 		B520E87E1F99988E0086461C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B520E87D1F99988E0086461C /* data.plist */; };
+		B520E8821F9999310086461C /* PlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8811F9999310086461C /* PlistManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		B520E8701F98ECA90086461C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B520E8711F98ECA90086461C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B520E87D1F99988E0086461C /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		B520E8801F9999310086461C /* PlistManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlistManager.h; sourceTree = "<group>"; };
+		B520E8811F9999310086461C /* PlistManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlistManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +124,18 @@
 		B520E87C1F99980D0086461C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B520E87F1F9999140086461C /* PlistManager */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B520E87F1F9999140086461C /* PlistManager */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8801F9999310086461C /* PlistManager.h */,
+				B520E8811F9999310086461C /* PlistManager.m */,
+			);
+			path = PlistManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
+				B520E8821F9999310086461C /* PlistManager.m in Sources */,
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
