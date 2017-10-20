@@ -72,6 +72,7 @@
 		B520E8CD1F999D840086461C /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		B520E8CE1F999D840086461C /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		B520E8CF1F999D840086461C /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		B520E8DC1F999E7C0086461C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 				B520E8701F98ECA90086461C /* Info.plist */,
 				B520E8711F98ECA90086461C /* main.m */,
 				B520E87D1F99988E0086461C /* data.plist */,
+				B520E8DC1F999E7C0086461C /* Constants.h */,
 			);
 			path = DisturbiaGame;
 			sourceTree = "<group>";
