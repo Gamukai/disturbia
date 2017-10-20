@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+ data.plist
+ DisturbiaGame
+
+ Created by Augusto Falcão on 10/19/17.
+ Copyright (c) 2017 Augusto Falcão. All rights reserved.
+ -->
+<plist version="1.0">
+    <dict>
+        <key>Points</key>
+        <integer>0</integer>
+        <key>Insanity</key>
+        <integer>0</integer>
+        <key>HiScore</key>
+        <integer>0</integer>
+        <key>Tutorial</key>
+        <integer>0</integer>
+        <key>Distance</key>
+        <integer>0</integer>
+    </dict>
+</plist>

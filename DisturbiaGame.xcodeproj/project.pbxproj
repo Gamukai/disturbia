@@ -16,6 +16,7 @@
 		B520E86C1F98ECA90086461C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B520E86B1F98ECA90086461C /* Assets.xcassets */; };
 		B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */; };
 		B520E8721F98ECA90086461C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8711F98ECA90086461C /* main.m */; };
+		B520E87E1F99988E0086461C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B520E87D1F99988E0086461C /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		B520E86E1F98ECA90086461C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B520E8701F98ECA90086461C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B520E8711F98ECA90086461C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B520E87D1F99988E0086461C /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				B520E87C1F99980D0086461C /* Helpers */,
 				B520E87A1F9994DA0086461C /* Scenes */,
 				B520E8781F98EEA80086461C /* Controllers */,
 				B520E85B1F98ECA90086461C /* AppDelegate.h */,
@@ -75,6 +78,7 @@
 				B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */,
 				B520E8701F98ECA90086461C /* Info.plist */,
 				B520E8711F98ECA90086461C /* main.m */,
+				B520E87D1F99988E0086461C /* data.plist */,
 			);
 			path = DisturbiaGame;
 			sourceTree = "<group>";
@@ -112,6 +116,13 @@
 				B520E8631F98ECA90086461C /* GameScene.m */,
 			);
 			path = GameScene;
+			sourceTree = "<group>";
+		};
+		B520E87C1F99980D0086461C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B520E87E1F99988E0086461C /* data.plist in Resources */,
 				B520E86A1F98ECA90086461C /* Main.storyboard in Resources */,
 				B520E85F1F98ECA90086461C /* GameScene.sks in Resources */,
 				B520E86C1F98ECA90086461C /* Assets.xcassets in Resources */,
