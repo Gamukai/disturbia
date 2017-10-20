@@ -36,6 +36,7 @@
 		B520E8D51F999D840086461C /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CE1F999D840086461C /* 2.wav */; };
 		B520E8D61F999D840086461C /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CF1F999D840086461C /* 0.wav */; };
 		B520E8E21F999FC20086461C /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E11F999FC20086461C /* Ground.m */; };
+		B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E51F99A16A0086461C /* PauseLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,8 @@
 		B520E8DC1F999E7C0086461C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B520E8E01F999FC20086461C /* Ground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
 		B520E8E11F999FC20086461C /* Ground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
+		B520E8E41F99A16A0086461C /* PauseLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PauseLabel.h; sourceTree = "<group>"; };
+		B520E8E51F99A16A0086461C /* PauseLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,7 @@
 		B520E8DE1F999F8F0086461C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B520E8E31F99A1580086461C /* PauseLabel */,
 				B520E8DF1F999F9E0086461C /* Ground */,
 			);
 			path = Components;
@@ -258,6 +262,15 @@
 				B520E8E11F999FC20086461C /* Ground.m */,
 			);
 			path = Ground;
+			sourceTree = "<group>";
+		};
+		B520E8E31F99A1580086461C /* PauseLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8E41F99A16A0086461C /* PauseLabel.h */,
+				B520E8E51F99A16A0086461C /* PauseLabel.m */,
+			);
+			path = PauseLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +368,7 @@
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
+				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
 			);
