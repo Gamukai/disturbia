@@ -18,6 +18,23 @@
 		B520E8721F98ECA90086461C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8711F98ECA90086461C /* main.m */; };
 		B520E87E1F99988E0086461C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = B520E87D1F99988E0086461C /* data.plist */; };
 		B520E8821F9999310086461C /* PlistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8811F9999310086461C /* PlistManager.m */; };
+		B520E8B71F999D6A0086461C /* RW-creepsville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B520E8B51F999D6A0086461C /* RW-creepsville.ttf */; };
+		B520E8B81F999D6A0086461C /* 8-BIT WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B520E8B61F999D6A0086461C /* 8-BIT WONDER.TTF */; };
+		B520E8BC1F999D720086461C /* intro.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8B91F999D710086461C /* intro.wav */; };
+		B520E8BD1F999D720086461C /* home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8BA1F999D710086461C /* home.mp3 */; };
+		B520E8BE1F999D720086461C /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8BB1F999D710086461C /* tap.mp3 */; };
+		B520E8C41F999D780086461C /* green.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8BF1F999D780086461C /* green.mp3 */; };
+		B520E8C51F999D780086461C /* yellow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8C01F999D780086461C /* yellow.mp3 */; };
+		B520E8C61F999D780086461C /* purple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8C11F999D780086461C /* purple.mp3 */; };
+		B520E8C71F999D780086461C /* turquoise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8C21F999D780086461C /* turquoise.mp3 */; };
+		B520E8C81F999D780086461C /* pink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B520E8C31F999D780086461C /* pink.mp3 */; };
+		B520E8D01F999D840086461C /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8C91F999D840086461C /* 4.wav */; };
+		B520E8D11F999D840086461C /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CA1F999D840086461C /* 5.wav */; };
+		B520E8D21F999D840086461C /* dead.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CB1F999D840086461C /* dead.wav */; };
+		B520E8D31F999D840086461C /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CC1F999D840086461C /* 1.wav */; };
+		B520E8D41F999D840086461C /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CD1F999D840086461C /* 3.wav */; };
+		B520E8D51F999D840086461C /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CE1F999D840086461C /* 2.wav */; };
+		B520E8D61F999D840086461C /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CF1F999D840086461C /* 0.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +55,23 @@
 		B520E87D1F99988E0086461C /* data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		B520E8801F9999310086461C /* PlistManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlistManager.h; sourceTree = "<group>"; };
 		B520E8811F9999310086461C /* PlistManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlistManager.m; sourceTree = "<group>"; };
+		B520E8B51F999D6A0086461C /* RW-creepsville.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RW-creepsville.ttf"; sourceTree = "<group>"; };
+		B520E8B61F999D6A0086461C /* 8-BIT WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT WONDER.TTF"; sourceTree = "<group>"; };
+		B520E8B91F999D710086461C /* intro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro.wav; sourceTree = "<group>"; };
+		B520E8BA1F999D710086461C /* home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = home.mp3; sourceTree = "<group>"; };
+		B520E8BB1F999D710086461C /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
+		B520E8BF1F999D780086461C /* green.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = green.mp3; sourceTree = "<group>"; };
+		B520E8C01F999D780086461C /* yellow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yellow.mp3; sourceTree = "<group>"; };
+		B520E8C11F999D780086461C /* purple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = purple.mp3; sourceTree = "<group>"; };
+		B520E8C21F999D780086461C /* turquoise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = turquoise.mp3; sourceTree = "<group>"; };
+		B520E8C31F999D780086461C /* pink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pink.mp3; sourceTree = "<group>"; };
+		B520E8C91F999D840086461C /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
+		B520E8CA1F999D840086461C /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
+		B520E8CB1F999D840086461C /* dead.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dead.wav; sourceTree = "<group>"; };
+		B520E8CC1F999D840086461C /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		B520E8CD1F999D840086461C /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		B520E8CE1F999D840086461C /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		B520E8CF1F999D840086461C /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +88,7 @@
 		B520E84F1F98ECA90086461C = {
 			isa = PBXGroup;
 			children = (
+				B520E8AF1F999CCF0086461C /* Resources */,
 				B520E85A1F98ECA90086461C /* DisturbiaGame */,
 				B520E8591F98ECA90086461C /* Products */,
 			);
@@ -138,6 +173,70 @@
 			path = PlistManager;
 			sourceTree = "<group>";
 		};
+		B520E8AF1F999CCF0086461C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8B11F999CE00086461C /* Sounds */,
+				B520E8B01F999CD60086461C /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B520E8B01F999CD60086461C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8B61F999D6A0086461C /* 8-BIT WONDER.TTF */,
+				B520E8B51F999D6A0086461C /* RW-creepsville.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B520E8B11F999CE00086461C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8B31F999CF40086461C /* Effects */,
+				B520E8B21F999CE60086461C /* Ambience */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		B520E8B21F999CE60086461C /* Ambience */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8BA1F999D710086461C /* home.mp3 */,
+				B520E8B91F999D710086461C /* intro.wav */,
+				B520E8BB1F999D710086461C /* tap.mp3 */,
+			);
+			path = Ambience;
+			sourceTree = "<group>";
+		};
+		B520E8B31F999CF40086461C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8CF1F999D840086461C /* 0.wav */,
+				B520E8CC1F999D840086461C /* 1.wav */,
+				B520E8CE1F999D840086461C /* 2.wav */,
+				B520E8CD1F999D840086461C /* 3.wav */,
+				B520E8C91F999D840086461C /* 4.wav */,
+				B520E8CA1F999D840086461C /* 5.wav */,
+				B520E8CB1F999D840086461C /* dead.wav */,
+				B520E8B41F999CFE0086461C /* Colors */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		B520E8B41F999CFE0086461C /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8BF1F999D780086461C /* green.mp3 */,
+				B520E8C31F999D780086461C /* pink.mp3 */,
+				B520E8C11F999D780086461C /* purple.mp3 */,
+				B520E8C21F999D780086461C /* turquoise.mp3 */,
+				B520E8C01F999D780086461C /* yellow.mp3 */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,12 +295,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B520E8D41F999D840086461C /* 3.wav in Resources */,
+				B520E8D11F999D840086461C /* 5.wav in Resources */,
+				B520E8C41F999D780086461C /* green.mp3 in Resources */,
 				B520E87E1F99988E0086461C /* data.plist in Resources */,
+				B520E8D61F999D840086461C /* 0.wav in Resources */,
+				B520E8BD1F999D720086461C /* home.mp3 in Resources */,
 				B520E86A1F98ECA90086461C /* Main.storyboard in Resources */,
+				B520E8D01F999D840086461C /* 4.wav in Resources */,
 				B520E85F1F98ECA90086461C /* GameScene.sks in Resources */,
+				B520E8B71F999D6A0086461C /* RW-creepsville.ttf in Resources */,
 				B520E86C1F98ECA90086461C /* Assets.xcassets in Resources */,
+				B520E8C51F999D780086461C /* yellow.mp3 in Resources */,
+				B520E8D51F999D840086461C /* 2.wav in Resources */,
+				B520E8D31F999D840086461C /* 1.wav in Resources */,
+				B520E8D21F999D840086461C /* dead.wav in Resources */,
+				B520E8C81F999D780086461C /* pink.mp3 in Resources */,
+				B520E8C61F999D780086461C /* purple.mp3 in Resources */,
 				B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */,
 				B520E8611F98ECA90086461C /* Actions.sks in Resources */,
+				B520E8B81F999D6A0086461C /* 8-BIT WONDER.TTF in Resources */,
+				B520E8BC1F999D720086461C /* intro.wav in Resources */,
+				B520E8C71F999D780086461C /* turquoise.mp3 in Resources */,
+				B520E8BE1F999D720086461C /* tap.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
