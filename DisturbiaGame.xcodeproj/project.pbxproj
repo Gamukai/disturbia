@@ -35,6 +35,7 @@
 		B520E8D41F999D840086461C /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CD1F999D840086461C /* 3.wav */; };
 		B520E8D51F999D840086461C /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CE1F999D840086461C /* 2.wav */; };
 		B520E8D61F999D840086461C /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = B520E8CF1F999D840086461C /* 0.wav */; };
+		B520E8E21F999FC20086461C /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E11F999FC20086461C /* Ground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		B520E8CE1F999D840086461C /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		B520E8CF1F999D840086461C /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
 		B520E8DC1F999E7C0086461C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B520E8E01F999FC20086461C /* Ground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
+		B520E8E11F999FC20086461C /* Ground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				B520E8DE1F999F8F0086461C /* Components */,
 				B520E87C1F99980D0086461C /* Helpers */,
 				B520E87A1F9994DA0086461C /* Scenes */,
 				B520E8781F98EEA80086461C /* Controllers */,
@@ -239,6 +243,23 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		B520E8DE1F999F8F0086461C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8DF1F999F9E0086461C /* Ground */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B520E8DF1F999F9E0086461C /* Ground */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8E01F999FC20086461C /* Ground.h */,
+				B520E8E11F999FC20086461C /* Ground.m */,
+			);
+			path = Ground;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B520E8E21F999FC20086461C /* Ground.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
