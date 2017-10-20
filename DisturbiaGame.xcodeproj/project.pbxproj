@@ -41,6 +41,7 @@
 		B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8ED1F99A3F20086461C /* InsanityBar.m */; };
 		B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F11F99A52A0086461C /* ObstacleScientist.m */; };
 		B520E8FA1F99A89D0086461C /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F91F99A89D0086461C /* Hero.m */; };
+		B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8FD1F99A93C0086461C /* PuzzleLight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,8 @@
 		B520E8F11F99A52A0086461C /* ObstacleScientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObstacleScientist.m; sourceTree = "<group>"; };
 		B520E8F81F99A89D0086461C /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		B520E8F91F99A89D0086461C /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		B520E8FC1F99A93C0086461C /* PuzzleLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleLight.h; sourceTree = "<group>"; };
+		B520E8FD1F99A93C0086461C /* PuzzleLight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleLight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,7 @@
 				B520E8E71F99A2800086461C /* PauseButton */,
 				B520E8E31F99A1580086461C /* PauseLabel */,
 				B520E8DF1F999F9E0086461C /* Ground */,
+				B520E8FB1F99A90B0086461C /* PuzzleLight */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,6 +327,15 @@
 				B520E8F91F99A89D0086461C /* Hero.m */,
 			);
 			path = Hero;
+			sourceTree = "<group>";
+		};
+		B520E8FB1F99A90B0086461C /* PuzzleLight */ = {
+			isa = PBXGroup;
+			children = (
+				B520E8FC1F99A93C0086461C /* PuzzleLight.h */,
+				B520E8FD1F99A93C0086461C /* PuzzleLight.m */,
+			);
+			path = PuzzleLight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +435,7 @@
 				B520E8FA1F99A89D0086461C /* Hero.m in Sources */,
 				B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
+				B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */,
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
 				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
