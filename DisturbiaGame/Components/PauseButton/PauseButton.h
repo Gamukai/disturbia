@@ -19,7 +19,7 @@
 
 @interface PauseButton : SKSpriteNode
 
-@property (weak) id<DGPauseButtonDelegate> delegate;
+@property (weak) id<PauseButtonDelegate> delegate;
 
 - (instancetype) initWithSize:(CGSize)size position:(CGPoint)position;
 
