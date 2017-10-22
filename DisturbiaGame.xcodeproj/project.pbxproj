@@ -45,6 +45,7 @@
 		B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9011F9A41B80086461C /* CutscenePrologue.m */; };
 		B520E9061F9C34720086461C /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9051F9C34720086461C /* MenuScene.m */; };
 		B520E90A1F9C35650086461C /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9091F9C35650086461C /* DeathScene.m */; };
+		B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E90D1F9C37250086461C /* PuzzleScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,8 @@
 		B520E9051F9C34720086461C /* MenuScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		B520E9081F9C35650086461C /* DeathScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
 		B520E9091F9C35650086461C /* DeathScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
+		B520E90C1F9C37250086461C /* PuzzleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleScene.h; sourceTree = "<group>"; };
+		B520E90D1F9C37250086461C /* PuzzleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,7 @@
 		B520E87A1F9994DA0086461C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B520E90B1F9C37110086461C /* PuzzleScene */,
 				B520E9071F9C35550086461C /* DeathScene */,
 				B520E9031F9C34600086461C /* MenuScene */,
 				B520E8FF1F9A419C0086461C /* CutscenePrologue */,
@@ -377,6 +381,15 @@
 			path = DeathScene;
 			sourceTree = "<group>";
 		};
+		B520E90B1F9C37110086461C /* PuzzleScene */ = {
+			isa = PBXGroup;
+			children = (
+				B520E90C1F9C37250086461C /* PuzzleScene.h */,
+				B520E90D1F9C37250086461C /* PuzzleScene.m */,
+			);
+			path = PuzzleScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
 				B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
