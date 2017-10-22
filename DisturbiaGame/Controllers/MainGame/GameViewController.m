@@ -7,30 +7,32 @@
 //
 
 #import "GameViewController.h"
-#import "GameScene.h"
 
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Load the SKScene from 'GameScene.sks'
-    GameScene *scene = (GameScene *)[SKScene nodeWithFileNamed:@"GameScene"];
-    
-    // Set the scale mode to scale to fit the window
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+    // Configure the view.
     SKView *skView = (SKView *)self.view;
-    
-    // Present the scene
-    [skView presentScene:scene];
-    
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+
+    /* Sprite Kit applies additional optimizations to improve rendering performance */
+    skView.ignoresSiblingOrder = YES;
+
+    // Create and configure the scene.
+    MenuScene *scene = [MenuScene sceneWithSize: skView.bounds.size];
+
+    // Set the scale mode to scale to fit the window
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+
+    // Present the scene
+    [skView presentScene:scene];
 }
 
 - (BOOL)shouldAutorotate {
-    return YES;
+    return NO;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
