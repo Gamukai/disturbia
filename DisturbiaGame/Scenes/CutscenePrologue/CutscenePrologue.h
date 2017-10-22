@@ -8,7 +8,7 @@
 
 @import AVFoundation;
 #import <SpriteKit/SpriteKit.h>
-//#import "GameScene.h"
+#import "GameScene.h"
 
 @interface CutscenePrologue : SKScene
 
