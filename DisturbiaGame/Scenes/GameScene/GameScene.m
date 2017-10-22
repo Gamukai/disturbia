@@ -8,75 +8,365 @@
 
 #import "GameScene.h"
 
-@implementation GameScene {
-    SKShapeNode *_spinnyNode;
-    SKLabelNode *_label;
+@implementation GameScene
+
+#pragma mark - Scene Cycle
+
+- (instancetype)initWithSize:(CGSize)size andDistance:(NSNumber *)distance andInsanity:(NSNumber *)insanity
+{
+    if (self = [super initWithSize:size]) {
+        self.inMiniPuzzle = 0;
+
+        self.auxCollision = 0;
+
+        self.distance = [distance integerValue];
+        self.insanity = [insanity integerValue];
+
+        self.data = [[PlistManager sharedManager] readFile];
+
+        self.countJump = 0;
+        self.insanityFamily = 0;
+
+        self.currentVisualFX = [CIFilter filterWithName:@""];
+
+        [self.physicsWorld setContactDelegate: self];
+        [self setShouldEnableEffects:YES];
+
+        [self setup];
+    }
+    return self;
 }
 
-- (void)didMoveToView:(SKView *)view {
-    // Setup your scene here
-    
-    // Get label node from scene and store it for use later
-    _label = (SKLabelNode *)[self childNodeWithName:@"//helloLabel"];
-    
-    _label.alpha = 0.0;
-    [_label runAction:[SKAction fadeInWithDuration:2.0]];
-    
-    CGFloat w = (self.size.width + self.size.height) * 0.05;
-    
-    // Create shape node to use during mouse interaction
-    _spinnyNode = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(w, w) cornerRadius:w * 0.3];
-    _spinnyNode.lineWidth = 2.5;
-    
-    [_spinnyNode runAction:[SKAction repeatActionForever:[SKAction rotateByAngle:M_PI duration:1]]];
-    [_spinnyNode runAction:[SKAction sequence:@[
-                                                [SKAction waitForDuration:0.5],
-                                                [SKAction fadeOutWithDuration:0.5],
-                                                [SKAction removeFromParent],
-                                                ]]];
+#pragma mark - Life cycle methods
+
+- (void) didMoveToView:(SKView *)view
+{
+    self.data = [[PlistManager sharedManager] readFile];
+    NSLog(@"%@", self.data);
+
+    self.insanity = [[self.data objectForKey:@"Insanity"] integerValue];
+    [self modifyInsanity];
+
+    [self play];
 }
 
+- (void)update:(CFTimeInterval)currentTime
+    {
+        [self modifyDistance];
 
-- (void)touchDownAtPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor greenColor];
-    [self addChild:n];
-}
+        [self modifyInsanity];
 
-- (void)touchMovedToPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor blueColor];
-    [self addChild:n];
-}
+        [self changeFX];
+    }
 
-- (void)touchUpAtPoint:(CGPoint)pos {
-    SKShapeNode *n = [_spinnyNode copy];
-    n.position = pos;
-    n.strokeColor = [SKColor redColor];
-    [self addChild:n];
+#pragma mark - Touch events
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.hero jump:self.countJump andParent:self];
+    self.countJump++;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    // Run 'Pulse' action from 'Actions.sks'
-    [_label runAction:[SKAction actionNamed:@"Pulse"] withKey:@"fadeInOut"];
-    
-    for (UITouch *t in touches) {[self touchDownAtPoint:[t locationInNode:self]];}
-}
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    for (UITouch *t in touches) {[self touchMovedToPoint:[t locationInNode:self]];}
-}
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
-}
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
+#pragma mark - Creators
+
+- (void)setup
+{
+    [self createWorld];
+    [self createInsanityBar];
+    [self createScoreLabel];
+    [self createHero];
+    [self createGround];
+    [self createEnemy];
+    [self createFX];
+    [self createPause];
+    [self resetStoredValues];
 }
 
+- (void) createInsanityBar
+{
+    self.insanityBar = [[InsanityBar alloc] initWithParent: self];
+    [self.insanityBar setZPosition: 100.00];
+    [self addChild: self.insanityBar];
+}
 
--(void)update:(CFTimeInterval)currentTime {
-    // Called before each frame is rendered
+- (void)createFX
+{
+    self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
+    self.musicalFX = [NSArray arrayWithObjects: @"tap", @"home", @"home", @"home", @"home", @"home", @"home", nil];
+    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"%@", self.musicalFX[0]] waitForCompletion: NO];
+    self.currentVisualFX = [[CIFilter alloc] init];
+}
+
+- (void)createScoreLabel
+{
+    self.distanceLabel = [[SKLabelNode alloc] initWithFontNamed:@"8BIT WONDER"];
+    self.distanceLabel.fontSize = self.frame.size.height * 0.07;
+    self.distanceLabel.fontColor = [UIColor colorWithRed:0.521569 green:0.768627 blue:0.254902 alpha:1];
+    [self.distanceLabel setPosition:CGPointMake(self.frame.size.width * 0.13, self.frame.size.height - self.frame.size.height * 0.2)];
+    [self.distanceLabel setText:[NSString stringWithFormat:@"%ld", (unsigned long) self.distance]];
+    [self.distanceLabel setZPosition: 100];
+    [self addChild: self.distanceLabel];
+}
+
+- (void)createWorld
+{
+    [Ground addNewNodeBackgroundTo: self];
+
+    self.pauseButton = [[PauseButton alloc] initWithSize:CGSizeMake(self.frame.size.width * 0.06, self.frame.size.width * 0.06) position:CGPointMake(self.frame.size.width - self.frame.size.width * 0.02 - (self.frame.size.width * 0.03), self.frame.size.height - self.frame.size.height * 0.1 - (self.frame.size.width * 0.06) / 2 + self.frame.size.height * 0.025)];
+    [self.pauseButton setZPosition: 100];
+    self.pauseButton.delegate = self;
+    [self addChild: self.pauseButton];
+
+    SKTexture *textureInsanity = [SKTexture textureWithImageNamed:@"insanity-bar-filled"];
+    SKSpriteNode *layerInsanity = [SKSpriteNode spriteNodeWithTexture:textureInsanity size:CGSizeMake(self.frame.size.width * 0.5, self.frame.size.height * 0.06)];
+    layerInsanity.anchorPoint = CGPointMake(1.0, 0.0);
+    layerInsanity.position = CGPointMake(self.frame.size.width * 0.53, self.frame.size.height - self.frame.size.height * 0.1);
+    layerInsanity.zPosition = 50.0;
+    [self addChild: layerInsanity];
+
+    self.physicsWorld.contactDelegate = self;
+    self.physicsWorld.gravity = CGVectorMake(0, -3);
+}
+
+- (void) createHero
+{
+    self.hero = [Hero createNodeOn:self];
+    self.hero.position = CGPointMake(self.frame.size.width / 6, self.frame.size.height / 4 + self.frame.size.height / 2);
+    self.hero.zPosition = 100;
+}
+
+- (void)createGround
+{
+    [Ground addNewNodeTo:self];
+}
+
+- (void)createPause
+{
+    self.pauseLabel = [[PauseLabel alloc] initWithPosition:CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2) fontSize:self.frame.size.height * 0.1];
+
+    [self addChild: self.pauseLabel];
+}
+
+- (void)resetStoredValues
+{
+    [self.data setObject: @0 forKey:@"Points"];
+    [self.data setObject: @0 forKey:@"Insanity"];
+    [self.data setObject: @0 forKey:@"Distance"];
+
+    [[PlistManager sharedManager] writeFileWith: self.data];
+}
+
+#pragma mark - Actions
+
+- (void)changeFX
+{
+    if (self.insanity > 80 && self.insanityFamily != 6)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"5" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 6;
+    }
+    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"4" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 5;
+    }
+    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"3" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 4;
+    }
+    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"2" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 3;
+    }
+    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"1" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 2;
+    }
+    else if(self.insanity < 11 && self.insanityFamily != 1)
+    {
+        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"0"]];
+        [self setFilter: self.currentVisualFX];
+
+        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"0" ofType:@"wav"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
+
+        self.insanityFamily = 1;
+    }
+}
+
+- (void)createEnemy
+{
+    if (self.distance < 1000)
+    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 2.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+    else if (self.distance < 2000)
+    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 1.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+    else
+    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+}
+
+- (void)addEnemy
+{
+    int sort = arc4random()%3;
+
+    if (sort == 0)
+    [ObstacleScientist addNewCrazyNodeTo:self];
+    else
+    [ObstacleScientist addNewNodeTo:self];
+}
+
+- (void)die
+{
+    [self resetStoredValues];
+
+    [self.audioPlayer stop];
+
+    [self.obstacleTimer invalidate];
+
+    SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
+    DeathScene *newScene = [DeathScene sceneWithSize: self.size];
+    [self.scene.view presentScene: newScene transition: reveal];
+}
+
+#pragma mark - Score and Death
+
+- (void)modifyDistance
+{
+    self.distance++;
+    [self.distanceLabel setText:[NSString stringWithFormat:@"%ld", (unsigned long)self.distance]];
+}
+
+- (void)modifyInsanity
+{
+    if (self.insanity >= 100) [self die];
+    else if (self.auxInsanity % 50 == 49)
+    {
+        self.auxInsanity = 0;
+        self.insanity++;
+        [self changeFX];
+        [self.insanityBar setProgress: self.insanity];
+    }
+    else self.auxInsanity++;
+
+}
+
+#pragma mark - SKPhysicsContactDelegate
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    uint32_t collision = (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask);
+    if (collision == (heroType | pipeType))
+    {
+        [contact.bodyB.node removeFromParent];
+
+        NSInteger points;
+
+        if (self.distance > 15000)
+        points = 10;
+        else if (self.distance > 8000)
+        points = 7;
+        else if(self.distance > 2500)
+        points = 5;
+        else
+        points = 3;
+
+        [self.obstacleTimer invalidate];
+        [self.audioPlayer stop];
+        [self setPaused: YES];
+
+        // MANIPULATE DATA ACROSS SCENES !!!
+
+        [self.data setObject:[NSNumber numberWithInteger: points] forKey:@"Points"];
+        [self.data setObject:[NSNumber numberWithInteger: self.insanity] forKey:@"Insanity"];
+        [self.data setObject:[NSNumber numberWithInteger: self.distance] forKey:@"Distance"];
+
+        [[PlistManager sharedManager] writeFileWith: self.data];
+
+        PuzzleScene *newScene = [PuzzleScene sceneWithSize: self.size];
+        newScene.previousGameScene = self;
+        [self.view presentScene: newScene];
+
+        self.inMiniPuzzle = 1;
+
+    }
+    else if (collision == (heroType | terrainType))
+    self.countJump = 0;
+}
+
+#pragma mark - DGPauseButtonDelegate
+
+- (void) play
+{
+    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval:3.4 target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+    [self.pauseLabel setText: @""];
+    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO];
+    [self runAction: self.currentMusicalFX];
+    [self setPaused: NO];
+
+    [self.audioPlayer play];
+
+    if (self.insanity > 80)
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
+    else if (self.insanity > 60)
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
+    else if (self.insanity > 40)
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
+    else if (self.insanity > 25)
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
+    else if (self.insanity > 10)
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
+    else
+    [self setFilter: [CIFilter filterWithName: @""]];
+}
+
+- (void) pause
+{
+    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO];
+    [self runAction: self.currentMusicalFX completion:^{[self setPaused: YES];}];
+    [self.obstacleTimer invalidate];
+    //[self setFilter: [CIFilter filterWithName: @"CIPhotoEffectMono"]]; // this filter is breaking the app
+    self.pauseLabel.text = @"PAUSED";
+
+    [self.audioPlayer pause];
 }
 
 @end
