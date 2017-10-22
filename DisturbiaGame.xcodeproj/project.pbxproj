@@ -44,6 +44,7 @@
 		B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8FD1F99A93C0086461C /* PuzzleLight.m */; };
 		B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9011F9A41B80086461C /* CutscenePrologue.m */; };
 		B520E9061F9C34720086461C /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9051F9C34720086461C /* MenuScene.m */; };
+		B520E90A1F9C35650086461C /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9091F9C35650086461C /* DeathScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,8 @@
 		B520E9011F9A41B80086461C /* CutscenePrologue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutscenePrologue.m; sourceTree = "<group>"; };
 		B520E9041F9C34720086461C /* MenuScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		B520E9051F9C34720086461C /* MenuScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		B520E9081F9C35650086461C /* DeathScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
+		B520E9091F9C35650086461C /* DeathScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,7 @@
 		B520E87A1F9994DA0086461C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B520E9071F9C35550086461C /* DeathScene */,
 				B520E9031F9C34600086461C /* MenuScene */,
 				B520E8FF1F9A419C0086461C /* CutscenePrologue */,
 				B520E87B1F9994E60086461C /* GameScene */,
@@ -364,6 +368,15 @@
 			path = MenuScene;
 			sourceTree = "<group>";
 		};
+		B520E9071F9C35550086461C /* DeathScene */ = {
+			isa = PBXGroup;
+			children = (
+				B520E9081F9C35650086461C /* DeathScene.h */,
+				B520E9091F9C35650086461C /* DeathScene.m */,
+			);
+			path = DeathScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,6 +473,7 @@
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E9061F9C34720086461C /* MenuScene.m in Sources */,
 				B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */,
+				B520E90A1F9C35650086461C /* DeathScene.m in Sources */,
 				B520E8FA1F99A89D0086461C /* Hero.m in Sources */,
 				B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
