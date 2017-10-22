@@ -70,8 +70,8 @@
     if ([[self.data objectForKey:@"Tutorial"] intValue] == 1) {
 
         SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
-        //GameScene *newScene = [[GameScene alloc] initWithSize: self.size andDistance:0 andInsanity:0];
-        //[self.scene.view presentScene: newScene transition: reveal];
+        GameScene *newScene = [[GameScene alloc] initWithSize: self.size andDistance:0 andInsanity:0];
+        [self.scene.view presentScene: newScene transition: reveal];
     }
     else {
 
