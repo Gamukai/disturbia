@@ -46,6 +46,8 @@
 		B520E9061F9C34720086461C /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9051F9C34720086461C /* MenuScene.m */; };
 		B520E90A1F9C35650086461C /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9091F9C35650086461C /* DeathScene.m */; };
 		B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E90D1F9C37250086461C /* PuzzleScene.m */; };
+		B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E9111F9D8E9E0086461C /* Smoke.sks */; };
+		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		B520E9091F9C35650086461C /* DeathScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
 		B520E90C1F9C37250086461C /* PuzzleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleScene.h; sourceTree = "<group>"; };
 		B520E90D1F9C37250086461C /* PuzzleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleScene.m; sourceTree = "<group>"; };
+		B520E9111F9D8E9E0086461C /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		B520E9121F9D8E9E0086461C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				B520E90F1F9D8D190086461C /* Effects */,
 				B520E8DE1F999F8F0086461C /* Components */,
 				B520E87C1F99980D0086461C /* Helpers */,
 				B520E87A1F9994DA0086461C /* Scenes */,
@@ -390,6 +395,23 @@
 			path = PuzzleScene;
 			sourceTree = "<group>";
 		};
+		B520E90F1F9D8D190086461C /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				B520E9101F9D8D2C0086461C /* Smoke */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		B520E9101F9D8D2C0086461C /* Smoke */ = {
+			isa = PBXGroup;
+			children = (
+				B520E9111F9D8E9E0086461C /* Smoke.sks */,
+				B520E9121F9D8E9E0086461C /* spark.png */,
+			);
+			path = Smoke;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,9 +490,11 @@
 				B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */,
 				B520E8611F98ECA90086461C /* Actions.sks in Resources */,
 				B520E8B81F999D6A0086461C /* 8-BIT WONDER.TTF in Resources */,
+				B520E9141F9D8E9E0086461C /* spark.png in Resources */,
 				B520E8BC1F999D720086461C /* intro.wav in Resources */,
 				B520E8C71F999D780086461C /* turquoise.mp3 in Resources */,
 				B520E8BE1F999D720086461C /* tap.mp3 in Resources */,
+				B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
