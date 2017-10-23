@@ -1,5 +1,3 @@
-# disturbia
-
 ![PREVIEW_00](media/screenshot00.png)
 
 <p align="center">My first iOS App. A game written in Objective-C.</p>
