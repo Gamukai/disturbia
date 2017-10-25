@@ -80,7 +80,7 @@
         SKAction *run = [SKAction runBlock:^{
             self.createdLights = self.createdLights + 1;
             CGSize size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
-            PuzzleLight *light = [[PuzzleLight alloc] initWithSize:size position:[self createPoint] color:@"scientist_walking_0" lifeTime:2.0];
+            PuzzleLight *light = [[PuzzleLight alloc] initWithSize:size position:[self createPoint] color:@"scientist_walking_0" lifeTime: [self calculateLifeTimeWith:self.numberOfLights]];
             light.delegate = self;
             [self addChild:light];
             [self createLights];
@@ -94,6 +94,11 @@
     NSNumber *sortedX = [NSNumber numberWithDouble: self.frame.size.width * 0.1 + self.frame.size.width * arc4random_uniform(80) / 100];
     NSNumber *sortedY = [NSNumber numberWithDouble: self.frame.size.height * 0.1 + self.frame.size.height * arc4random_uniform(80) / 100];
     return CGPointMake([sortedX doubleValue], [sortedY doubleValue]);
+}
+
+- (NSTimeInterval) calculateLifeTimeWith: (NSTimeInterval) base
+{
+    return 4 / (2 + base);
 }
 
 #pragma mark - DGPuzzleLight Delegate
