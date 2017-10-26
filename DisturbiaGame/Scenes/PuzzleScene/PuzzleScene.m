@@ -39,7 +39,7 @@
     NSLog(@"Diparou no fim");
     BOOL success = (self.clickCount == self.numberOfLights);
     if (success == YES)
-    self.parentInsanity = self.parentInsanity + 3;
+    self.parentInsanity = self.parentInsanity - 3;
     else
     self.parentInsanity = self.parentInsanity + 15;
 
