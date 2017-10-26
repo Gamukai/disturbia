@@ -286,7 +286,11 @@
         [self.insanityBar setProgress: self.insanity];
     }
     else self.auxInsanity++;
+}
 
+- (NSInteger)calculatePoints
+{
+    return 2 + [[NSNumber numberWithDouble:(self.distance / 1000)] integerValue];
 }
 
 #pragma mark - SKPhysicsContactDelegate
@@ -298,16 +302,7 @@
     {
         [contact.bodyB.node removeFromParent];
 
-        NSInteger points;
-
-        if (self.distance > 15000)
-        points = 10;
-        else if (self.distance > 8000)
-        points = 7;
-        else if(self.distance > 2500)
-        points = 5;
-        else
-        points = 3;
+        NSInteger points = [self calculatePoints];
 
         [self.obstacleTimer invalidate];
         [self.audioPlayer stop];
