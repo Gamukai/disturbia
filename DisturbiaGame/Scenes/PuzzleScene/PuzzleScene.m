@@ -69,6 +69,17 @@
 
 #pragma mark - Light Methods
 
+- (UIColor *)randomColor
+{
+    NSArray *colors = [NSArray arrayWithObjects:
+                       [UIColor greenColor],
+                       [UIColor colorWithRed:0.98 green:0.05 blue:0.75 alpha:1.0],
+                       [UIColor purpleColor],
+                       [UIColor colorWithRed:0.25 green:0.87 blue:0.81 alpha:1.0],
+                       [UIColor yellowColor], nil];
+    return [colors objectAtIndex: arc4random_uniform(5)];
+}
+
 - (void)createLights
 {
     if (self.createdLights < self.numberOfLights)
@@ -77,7 +88,7 @@
         SKAction *run = [SKAction runBlock:^{
             self.createdLights = self.createdLights + 1;
             CGSize size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
-            PuzzleLight *light = [[PuzzleLight alloc] initWithSize:size position:[self createPoint] color:@"scientist_walking_0" lifeTime: [self calculateLifeTimeWith:self.numberOfLights]];
+            PuzzleLight *light = [[PuzzleLight alloc] initWithSize:size position:[self createPoint] color:[self randomColor] lifeTime: [self calculateLifeTimeWith:self.numberOfLights]];
             light.delegate = self;
             [self addChild:light];
             [self createLights];

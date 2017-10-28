@@ -10,15 +10,17 @@
 
 @implementation PuzzleLight
 
-- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position color:(NSString *)color lifeTime:(NSTimeInterval)lifeTime
+- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position color:(UIColor *)color lifeTime:(NSTimeInterval)lifeTime
 {
-    SKTexture *lightTexture = [SKTexture textureWithImageNamed: color];
-    if (self = [super initWithTexture:lightTexture color:[UIColor clearColor] size:size])
+    SKTexture *lightTexture = [SKTexture textureWithImageNamed: @"Ball"];
+    if (self = [super initWithTexture:lightTexture color:color size:size])
     {
         [self setPosition: position];
         [self setZPosition: 100];
         [self setUserInteractionEnabled: YES];
+        self.colorBlendFactor = 1.0;
         self.lifeTimer = [NSTimer timerWithTimeInterval:lifeTime target:self selector:@selector(lightDeath) userInfo:nil repeats:NO];
+        self.lifeTime = lifeTime;
         [self animate];
     }
     return self;
@@ -26,26 +28,8 @@
 
 - (void) animate
 {
-    NSMutableArray *animationFrames = [[NSMutableArray alloc] init];
-    int numberOFSprites = 0;
-
-    while(numberOFSprites < 30)
-    {
-        if(numberOFSprites < 10)
-        {
-            [animationFrames addObject: [SKTexture textureWithImageNamed: [NSString stringWithFormat: @"hero_running_00%d", numberOFSprites]]];
-        }
-        else
-        {
-            [animationFrames addObject: [SKTexture textureWithImageNamed: [NSString stringWithFormat: @"hero_running_0%d", numberOFSprites]]];
-        }
-        numberOFSprites++;
-    }
-
-    [self runAction:[SKAction animateWithTextures:animationFrames
-                                     timePerFrame:0.04f
-                                           resize:NO
-                                          restore:YES] completion:^{
+    [self runAction:[SKAction scaleTo:2.0
+                             duration:self.lifeTime] completion:^{
         if (self.delegate) [self.delegate died];
         [self removeFromParent];
     }];

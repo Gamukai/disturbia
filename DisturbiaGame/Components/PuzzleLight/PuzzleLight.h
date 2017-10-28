@@ -21,7 +21,8 @@
 
 @property (nonatomic, assign) id<PuzzleLightDelegate> delegate;
 @property (nonatomic, assign) NSTimer *lifeTimer;
+@property (nonatomic, assign) NSTimeInterval lifeTime;
 
-- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position color:(NSString *)color lifeTime:(NSTimeInterval)lifeTime;
+- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position color:(UIColor *)color lifeTime:(NSTimeInterval)lifeTime;
 
 @end
