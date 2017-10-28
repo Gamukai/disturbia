@@ -25,7 +25,6 @@
 @property (nonatomic, assign) NSTimer *respawnTimer;
 
 @property (nonatomic, assign) NSUInteger clickCount;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @property SKScene *previousGameScene;
 

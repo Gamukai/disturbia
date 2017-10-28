@@ -53,8 +53,6 @@
     NSLog(@"%@", self.data);
     [[PlistManager sharedManager] writeFileWith: self.data];
 
-    [self.audioPlayer stop];
-
     [self.view presentScene: self.previousGameScene];
 }
 
@@ -68,11 +66,6 @@
     background.zPosition = 10;
     [self addChild:background];
     self.scaleMode = SKSceneScaleModeAspectFit;
-
-    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"home" ofType:@"mp3"]];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
 }
 
 #pragma mark - Light Methods

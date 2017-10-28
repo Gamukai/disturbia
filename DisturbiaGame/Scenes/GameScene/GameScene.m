@@ -299,7 +299,6 @@
         NSInteger points = [self calculatePoints];
 
         [self.obstacleTimer invalidate];
-        [self.audioPlayer stop];
         [self setPaused: YES];
 
         // MANIPULATE DATA ACROSS SCENES !!!
