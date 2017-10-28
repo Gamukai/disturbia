@@ -173,7 +173,7 @@
 
         self.insanityFamily = 6;
     }
-    else if (self.insanity > 60 && self.insanityFamily != 5)
+    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
 
@@ -182,7 +182,7 @@
 
         self.insanityFamily = 5;
     }
-    else if (self.insanity > 40 && self.insanityFamily != 4)
+    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
 
@@ -191,7 +191,7 @@
 
         self.insanityFamily = 4;
     }
-    else if (self.insanity > 25 && self.insanityFamily != 3)
+    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
 
@@ -200,7 +200,7 @@
 
         self.insanityFamily = 3;
     }
-    else if (self.insanity > 10 && self.insanityFamily != 2)
+    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
 
@@ -209,7 +209,7 @@
 
         self.insanityFamily = 2;
     }
-    else if(self.insanityFamily != 1)
+    else if(self.insanity < 11 && self.insanityFamily != 1)
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"0"]]];
 
