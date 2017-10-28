@@ -60,8 +60,7 @@
 
 - (void)createWorld
 {
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor: [SKColor colorWithRed:0.0 green:17.0 blue:43.0 alpha:0.5] size: self.view.frame.size];
-    background.color = SKColor.cyanColor;
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor: [SKColor colorWithRed:0.05 green:0.05 blue:0.15 alpha:1.0] size: self.view.frame.size];
     background.position = (CGPoint) {CGRectGetMidX(self.view.frame), CGRectGetMidY(self.view.frame)};
     background.zPosition = 10;
     [self addChild:background];
