@@ -81,7 +81,7 @@
 {
     if (self.createdLights < self.numberOfLights)
     {
-        SKAction *waitAction = [SKAction waitForDuration: 1.0];
+        SKAction *waitAction = [SKAction waitForDuration: [self calculateRespawnTimeWith:self.numberOfLights]];
         SKAction *run = [SKAction runBlock:^{
             self.createdLights = self.createdLights + 1;
             CGSize size = CGSizeMake(self.frame.size.width * 0.1, self.frame.size.width * 0.1);
@@ -101,9 +101,14 @@
     return CGPointMake([sortedX doubleValue], [sortedY doubleValue]);
 }
 
-- (NSTimeInterval) calculateLifeTimeWith: (NSTimeInterval) base
+- (NSTimeInterval)calculateLifeTimeWith:(NSTimeInterval)base
 {
     return 4 / (2 + base);
+}
+
+- (NSTimeInterval)calculateRespawnTimeWith:(NSTimeInterval)base
+{
+    return 6 / (5 + base);
 }
 
 #pragma mark - DGPuzzleLight Delegate
