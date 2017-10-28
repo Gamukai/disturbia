@@ -322,6 +322,8 @@
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO]];
     [self setPaused: NO];
 
+    [self setUserInteractionEnabled:YES];
+
     [self.audioPlayer play];
 
     if (self.insanity > 80)
@@ -343,6 +345,8 @@
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO] completion:^{[self setPaused: YES];}];
     [self.obstacleTimer invalidate];
     self.pauseLabel.text = @"PAUSED";
+
+    [self setUserInteractionEnabled:NO];
 
     [self.audioPlayer pause];
 }
