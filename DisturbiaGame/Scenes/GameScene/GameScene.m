@@ -223,11 +223,11 @@
 - (void)createEnemy
 {
     if (self.distance < 1000)
-    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 2.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 2.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
     else if (self.distance < 2000)
-    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 1.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 1.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
     else
-    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
+        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
 }
 
 - (void)addEnemy
@@ -235,9 +235,9 @@
     int sort = arc4random()%3;
 
     if (sort == 0)
-    [ObstacleScientist addNewCrazyNodeTo:self];
+        [ObstacleScientist addNewCrazyNodeTo:self];
     else
-    [ObstacleScientist addNewNodeTo:self];
+        [ObstacleScientist addNewNodeTo:self];
 }
 
 - (void)die
@@ -319,32 +319,29 @@
 {
     self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval:3.4 target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
     [self.pauseLabel setText: @""];
-    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO];
-    [self runAction: self.currentMusicalFX];
+    [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO]];
     [self setPaused: NO];
 
     [self.audioPlayer play];
 
     if (self.insanity > 80)
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
     else if (self.insanity > 60)
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
     else if (self.insanity > 40)
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
     else if (self.insanity > 25)
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
     else if (self.insanity > 10)
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
     else
-    [self setFilter: [CIFilter filterWithName: @""]];
+        [self setFilter: [CIFilter filterWithName: @""]];
 }
 
 - (void) pause
 {
-    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO];
-    [self runAction: self.currentMusicalFX completion:^{[self setPaused: YES];}];
+    [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO] completion:^{[self setPaused: YES];}];
     [self.obstacleTimer invalidate];
-    //[self setFilter: [CIFilter filterWithName: @"CIPhotoEffectMono"]]; // this filter is breaking the app
     self.pauseLabel.text = @"PAUSED";
 
     [self.audioPlayer pause];
