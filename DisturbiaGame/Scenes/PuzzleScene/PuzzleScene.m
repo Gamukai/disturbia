@@ -110,7 +110,7 @@
 
 - (void)died
 {
-    self.clickCount += 1;
+    [self finishScene];
 }
 
 @end
