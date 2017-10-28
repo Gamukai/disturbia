@@ -245,6 +245,7 @@
     [self resetStoredValues];
 
     [self.audioPlayer stop];
+    self.audioPlayer = nil;
 
     [self.obstacleTimer invalidate];
 
