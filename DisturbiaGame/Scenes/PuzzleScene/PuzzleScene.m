@@ -95,7 +95,7 @@
 
 - (NSTimeInterval)calculateLifeTimeWith:(NSTimeInterval)base
 {
-    return 4 / (2 + base);
+    return 9 / (11 + base);
 }
 
 - (NSTimeInterval)calculateRespawnTimeWith:(NSTimeInterval)base
