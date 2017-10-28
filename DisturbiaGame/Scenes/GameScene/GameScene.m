@@ -44,7 +44,7 @@
     self.data = [[PlistManager sharedManager] readFile];
     NSLog(@"%@", self.data);
 
-    self.insanity = [[self.data objectForKey:@"Insanity"] integerValue];
+    self.insanity = [self maxBetween:0 and:[[self.data objectForKey:@"Insanity"] integerValue]];
     [self modifyInsanity];
 
     [self play];
@@ -278,6 +278,11 @@
 - (NSInteger)calculatePoints
 {
     return 2 + [[NSNumber numberWithDouble:(self.distance / 1000)] integerValue];
+}
+
+- (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
+{
+    return a > b ? a : b;
 }
 
 #pragma mark - SKPhysicsContactDelegate
