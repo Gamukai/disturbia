@@ -21,9 +21,6 @@
 @property (nonatomic, assign) NSUInteger numberOfLights;
 @property (nonatomic, assign) NSUInteger createdLights;
 
-@property (nonatomic, assign) NSTimer *puzzleTimer;
-@property (nonatomic, assign) NSTimer *respawnTimer;
-
 @property (nonatomic, assign) NSUInteger clickCount;
 
 @property SKScene *previousGameScene;

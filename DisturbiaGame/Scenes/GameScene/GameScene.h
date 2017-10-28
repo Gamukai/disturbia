@@ -27,7 +27,6 @@
 @property (nonatomic, assign) NSUInteger inMiniPuzzle;
 
 @property (nonatomic, strong) Hero *hero;
-@property (nonatomic, assign) NSUInteger auxCollision;
 @property (nonatomic, strong) NSMutableDictionary *data;
 @property (nonatomic, assign) NSUInteger distance;
 @property (nonatomic, strong) SKLabelNode *distanceLabel;
@@ -40,12 +39,7 @@
 @property (nonatomic, strong) PauseButton *pauseButton;
 @property (nonatomic, assign) NSUInteger countJump;
 @property (nonatomic, strong) NSArray *visualFX;
-@property (nonatomic, strong) CIFilter *currentVisualFX;
-@property (nonatomic, strong) NSArray *musicalFX;
-@property (nonatomic, strong) SKAction *currentMusicalFX;
-@property (nonatomic, strong) NSArray *soundFX;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-@property (nonatomic, strong) SKSpriteNode *layer;
 
 - (instancetype)initWithSize:(CGSize)size andDistance:(NSNumber *)distance andInsanity:(NSNumber *)insanity;
 

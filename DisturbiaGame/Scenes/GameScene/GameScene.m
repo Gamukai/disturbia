@@ -17,8 +17,6 @@
     if (self = [super initWithSize:size]) {
         self.inMiniPuzzle = 0;
 
-        self.auxCollision = 0;
-
         self.distance = [distance integerValue];
         self.insanity = [insanity integerValue];
 
@@ -26,8 +24,6 @@
 
         self.countJump = 0;
         self.insanityFamily = 0;
-
-        self.currentVisualFX = [CIFilter filterWithName:@""];
 
         [self.physicsWorld setContactDelegate: self];
         [self setShouldEnableEffects:YES];
@@ -91,9 +87,6 @@
 - (void)createFX
 {
     self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
-    self.musicalFX = [NSArray arrayWithObjects: @"tap", @"home", @"home", @"home", @"home", @"home", @"home", nil];
-    self.currentMusicalFX = [SKAction playSoundFileNamed: [NSString stringWithFormat: @"%@", self.musicalFX[0]] waitForCompletion: NO];
-    self.currentVisualFX = [[CIFilter alloc] init];
 }
 
 - (void)createScoreLabel
