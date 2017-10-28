@@ -44,6 +44,8 @@
     self.data = [[PlistManager sharedManager] readFile];
     NSLog(@"%@", self.data);
 
+    self.distance = [[self.data objectForKey:@"Distance"] integerValue];
+
     self.insanity = [self maxBetween:0 and:[[self.data objectForKey:@"Insanity"] integerValue]];
     [self modifyInsanity];
 
