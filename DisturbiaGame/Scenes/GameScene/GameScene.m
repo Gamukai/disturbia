@@ -158,77 +158,66 @@
 
 #pragma mark - Actions
 
+- (void)setPlayerWith:(NSURL *)url
+{
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    self.audioPlayer.numberOfLoops = -1;
+    [self.audioPlayer play];
+}
+
 - (void)changeFX
 {
     if (self.insanity > 80 && self.insanityFamily != 6)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"5" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 6;
     }
     else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"4" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 5;
     }
     else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"3" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 4;
     }
     else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"2" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 3;
     }
     else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"1" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 2;
     }
     else if(self.insanity < 11 && self.insanityFamily != 1)
     {
-        self.currentVisualFX = [CIFilter filterWithName: [NSString stringWithFormat:@"0"]];
-        [self setFilter: self.currentVisualFX];
+        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"0"]]];
 
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"0" ofType:@"wav"]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        [self.audioPlayer play];
+        [self setPlayerWith: url];
 
         self.insanityFamily = 1;
     }
