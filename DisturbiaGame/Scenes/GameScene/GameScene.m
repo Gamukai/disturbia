@@ -71,6 +71,7 @@
     [self createScoreLabel];
     [self createHero];
     [self createGround];
+    [self createPickup];
     [self createEnemy];
     [self createFX];
     [self createPause];
@@ -215,6 +216,21 @@
     }
 }
 
+- (void)createPickup
+{
+    if (self.distance < 1000)
+        self.pickupTimer = [NSTimer scheduledTimerWithTimeInterval: 4.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
+    else if (self.distance < 2000)
+        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 6.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
+    else
+        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 8.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
+}
+
+-(void)addPickup
+{
+    [Pickup addNewNodeTo:self];
+}
+
 - (void)createEnemy
 {
     if (self.distance < 1000)
@@ -280,37 +296,41 @@
     return a > b ? a : b;
 }
 
+- (void)collectPickupWith:(SKPhysicsContact *)contact
+{
+    [self runAction: [SKAction playSoundFileNamed:@"purple" waitForCompletion: NO]];
+
+    self.insanity = [self maxBetween:0 and:self.insanity - 15];
+    [self modifyInsanity];
+
+    contact.bodyA.categoryBitMask == pickupType
+    ? [contact.bodyA.node removeFromParent]
+    : [contact.bodyB.node removeFromParent];
+}
+
+- (void)hitScientistWith:(SKPhysicsContact *)contact
+{
+    [self runAction: [SKAction playSoundFileNamed:@"green" waitForCompletion: NO]];
+
+    self.insanity = self.insanity + 20;
+    [self modifyInsanity];
+
+    contact.bodyA.categoryBitMask == pipeType
+    ? [contact.bodyA.node removeFromParent]
+    : [contact.bodyB.node removeFromParent];
+}
+
 #pragma mark - SKPhysicsContactDelegate
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
     uint32_t collision = (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask);
     if (collision == (heroType | pipeType))
-    {
-        [contact.bodyB.node removeFromParent];
-
-        NSInteger points = [self calculatePoints];
-
-        [self.obstacleTimer invalidate];
-        [self setPaused: YES];
-
-        // MANIPULATE DATA ACROSS SCENES !!!
-
-        [self.data setObject:[NSNumber numberWithInteger: points] forKey:@"Points"];
-        [self.data setObject:[NSNumber numberWithInteger: self.insanity] forKey:@"Insanity"];
-        [self.data setObject:[NSNumber numberWithInteger: self.distance] forKey:@"Distance"];
-
-        [[PlistManager sharedManager] writeFileWith: self.data];
-
-        PuzzleScene *newScene = [PuzzleScene sceneWithSize: self.size];
-        newScene.previousGameScene = self;
-        [self.view presentScene: newScene];
-
-        self.inMiniPuzzle = 1;
-
-    }
+        [self hitScientistWith:contact];
     else if (collision == (heroType | terrainType))
-    self.countJump = 0;
+        self.countJump = 0;
+    else if (collision == (heroType | pickupType))
+        [self collectPickupWith:contact];
 }
 
 #pragma mark - DGPauseButtonDelegate

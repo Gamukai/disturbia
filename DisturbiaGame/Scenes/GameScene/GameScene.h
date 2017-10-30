@@ -15,6 +15,7 @@
 #import "Ground.h"
 #import "Hero.h"
 #import "ObstacleScientist.h"
+#import "Pickup.h"
 #import "InsanityBar.h"
 #import "PauseLabel.h"
 #import "PauseButton.h"
@@ -35,6 +36,7 @@
 @property (nonatomic, assign) NSUInteger auxInsanity;
 @property (nonatomic, strong) InsanityBar *insanityBar;
 @property (nonatomic, strong) PauseLabel *pauseLabel;
+@property (nonatomic, strong) NSTimer *pickupTimer;
 @property (nonatomic, strong) NSTimer *obstacleTimer;
 @property (nonatomic, strong) PauseButton *pauseButton;
 @property (nonatomic, assign) NSUInteger countJump;
