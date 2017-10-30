@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpriteKit/SpriteKit.h>
+#import "Constants.h"
 
-@interface Pickup : NSObject
+@interface Pickup : SKSpriteNode
+
++ (void)addNewNodeTo:(SKNode *)parentNode;
 
 @end
