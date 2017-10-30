@@ -164,6 +164,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
 
+        [self.audioPlayer setVolume: 0.1];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"5" ofType:@"wav"]];
         [self setPlayerWith: url];
 
@@ -173,6 +174,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
 
+        [self.audioPlayer setVolume: 0.05];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"4" ofType:@"wav"]];
         [self setPlayerWith: url];
 
@@ -182,6 +184,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
 
+        [self.audioPlayer setVolume: 0.1];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"3" ofType:@"wav"]];
         [self setPlayerWith: url];
 
@@ -191,6 +194,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
 
+        [self.audioPlayer setVolume: 0.05];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"2" ofType:@"wav"]];
         [self setPlayerWith: url];
 
@@ -200,6 +204,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
 
+        [self.audioPlayer setVolume: 0.1];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"1" ofType:@"wav"]];
         [self setPlayerWith: url];
 
@@ -209,6 +214,7 @@
     {
         [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"0"]]];
 
+        [self.audioPlayer setVolume: 1.0];
         NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"0" ofType:@"wav"]];
         [self setPlayerWith: url];
 
