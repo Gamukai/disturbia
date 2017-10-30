@@ -48,6 +48,7 @@
 		B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E90D1F9C37250086461C /* PuzzleScene.m */; };
 		B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E9111F9D8E9E0086461C /* Smoke.sks */; };
 		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
+		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,8 @@
 		B520E90D1F9C37250086461C /* PuzzleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleScene.m; sourceTree = "<group>"; };
 		B520E9111F9D8E9E0086461C /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 		B520E9121F9D8E9E0086461C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		B5C1E24F1FA7AF41007CD1BF /* Pickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pickup.h; sourceTree = "<group>"; };
+		B5C1E2501FA7AF41007CD1BF /* Pickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pickup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,7 @@
 		B520E8DE1F999F8F0086461C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B5C1E24E1FA7AF27007CD1BF /* Pickup */,
 				B520E8F71F99A87D0086461C /* Hero */,
 				B520E8EF1F99A50C0086461C /* ObstacleScientist */,
 				B520E8EB1F99A3CD0086461C /* InsanityBar */,
@@ -412,6 +416,15 @@
 			path = Smoke;
 			sourceTree = "<group>";
 		};
+		B5C1E24E1FA7AF27007CD1BF /* Pickup */ = {
+			isa = PBXGroup;
+			children = (
+				B5C1E24F1FA7AF41007CD1BF /* Pickup.h */,
+				B5C1E2501FA7AF41007CD1BF /* Pickup.m */,
+			);
+			path = Pickup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
 				B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */,
