@@ -15,31 +15,24 @@ static const CGFloat duration = 6.0;
 
 + (void)addNewNodeTo: (SKNode*) parentNode
 {
-    SKTexture *obstacleTexture = [SKTexture textureWithImageNamed:@"scientist_walking_0"];
-    SKSpriteNode *obstacleNode = [SKSpriteNode spriteNodeWithTexture: obstacleTexture size: CGSizeMake(parentNode.frame.size.width * (1.0/12), parentNode.frame.size.height * (1.0/4))];
-
-    obstacleNode.position = CGPointMake(parentNode.frame.size.width + (CGFloat)arc4random_uniform(10) * 60.0f,
-                                        parentNode.frame.size.height / 6 + obstacleNode.frame.size.height / 2 - obstacleNode.frame.size.height * 0.17);
-
-    obstacleNode.zPosition = 0;
-    obstacleNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(parentNode.frame.size.width * (1.0/14), parentNode.frame.size.height * (1.0/5))];
-    obstacleNode.physicsBody.dynamic = NO;
-    obstacleNode.physicsBody.categoryBitMask = scientistType;
-    obstacleNode.zPosition = 100;
-    [parentNode addChild: obstacleNode];
-    [self animate: obstacleNode];
+    [self nodeSetupWithParent: parentNode bodyWidth: 12.0 bodyHeight: 4.0 yPosition: 0.17 physicsBodyWidth: 14.0 physicsBodyHeight: 5.0];
 }
 
 + (void)addNewCrazyNodeTo: (SKNode*) parentNode
 {
+    [self nodeSetupWithParent: parentNode bodyWidth: 8.0 bodyHeight: 2.0 yPosition: 0.08 physicsBodyWidth: 10.0 physicsBodyHeight: 3.0];
+}
+
++ (void)nodeSetupWithParent:(SKNode *) parentNode bodyWidth:(CGFloat) bWidth bodyHeight:(CGFloat) bHeight yPosition:(CGFloat) y physicsBodyWidth:(CGFloat) pbWidth physicsBodyHeight:(CGFloat) pbHeight
+{
     SKTexture *obstacleTexture = [SKTexture textureWithImageNamed:@"scientist_walking_0"];
-    SKSpriteNode *obstacleNode = [SKSpriteNode spriteNodeWithTexture: obstacleTexture size: CGSizeMake(parentNode.frame.size.width * (1.0/8), parentNode.frame.size.height * (1.0/2))];
+    SKSpriteNode *obstacleNode = [SKSpriteNode spriteNodeWithTexture: obstacleTexture size: CGSizeMake(parentNode.frame.size.width * (1.0/bWidth), parentNode.frame.size.height * (1.0/bHeight))];
 
     obstacleNode.position = CGPointMake(parentNode.frame.size.width + (CGFloat)arc4random_uniform(10) * 60.0f,
-                                        parentNode.frame.size.height / 6 + obstacleNode.frame.size.height / 2 - obstacleNode.frame.size.height * 0.08);
+                                        parentNode.frame.size.height / 6 + obstacleNode.frame.size.height / 2 - obstacleNode.frame.size.height * y);
 
     obstacleNode.zPosition = 0;
-    obstacleNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(parentNode.frame.size.width * (1.0/10), parentNode.frame.size.height * (1.0/3))];
+    obstacleNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(parentNode.frame.size.width * (1.0/pbWidth), parentNode.frame.size.height * (1.0/pbHeight))];
     obstacleNode.physicsBody.dynamic = NO;
     obstacleNode.physicsBody.categoryBitMask = scientistType;
     obstacleNode.zPosition = 100;
@@ -49,7 +42,6 @@ static const CGFloat duration = 6.0;
 
 + (void)animate:(SKNode *)node
 {
-
     NSMutableArray *animationFrames = [[NSMutableArray alloc] init];
     int numberOFSprites = 0;
 
