@@ -158,68 +158,31 @@
     [self.audioPlayer play];
 }
 
-- (void)changeFX
+- (void)updateFXWith:(NSString *)fx andVolume:(CGFloat)volume andInsanityFamily:(NSInteger)insanityFamily
+{
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", fx]]];
+
+    [self.audioPlayer setVolume: volume];
+    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: [NSString stringWithFormat:@"%ld", insanityFamily - 1] ofType:@"wav"]];
+    [self setPlayerWith: url];
+
+    self.insanityFamily = insanityFamily;
+}
+
+- (void)fxWillChange
 {
     if (self.insanity > 80 && self.insanityFamily != 6)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
-
-        [self.audioPlayer setVolume: 0.1];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"5" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 6;
-    }
+        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
     else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
-
-        [self.audioPlayer setVolume: 0.05];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"4" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 5;
-    }
+        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
     else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
-
-        [self.audioPlayer setVolume: 0.1];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"3" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 4;
-    }
+        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
     else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
-
-        [self.audioPlayer setVolume: 0.05];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"2" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 3;
-    }
+        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
     else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
-
-        [self.audioPlayer setVolume: 0.1];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"1" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 2;
-    }
+        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
     else if(self.insanity < 11 && self.insanityFamily != 1)
-    {
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"0"]]];
-
-        [self.audioPlayer setVolume: 1.0];
-        NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: @"0" ofType:@"wav"]];
-        [self setPlayerWith: url];
-
-        self.insanityFamily = 1;
-    }
+        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
 }
 
 - (void)createPickup
@@ -286,7 +249,7 @@
     {
         self.auxInsanity = 0;
         self.insanity++;
-        [self changeFX];
+        [self fxWillChange];
         [self.insanityBar setProgress: self.insanity];
     }
     else self.auxInsanity++;
