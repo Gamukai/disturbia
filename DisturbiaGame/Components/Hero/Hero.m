@@ -21,7 +21,7 @@
         self.physicsBody.allowsRotation = NO;
         self.physicsBody.collisionBitMask = terrainType;
         self.physicsBody.categoryBitMask = heroType;
-        self.physicsBody.contactTestBitMask = pipeType;
+        self.physicsBody.contactTestBitMask = scientistType;
 
         [self animate];
     }

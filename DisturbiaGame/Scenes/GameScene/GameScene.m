@@ -321,7 +321,7 @@
     self.insanity = self.insanity + 20;
     [self modifyInsanity];
 
-    contact.bodyA.categoryBitMask == pipeType
+    contact.bodyA.categoryBitMask == scientistType
     ? [contact.bodyA.node removeFromParent]
     : [contact.bodyB.node removeFromParent];
 }
@@ -331,7 +331,7 @@
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
     uint32_t collision = (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask);
-    if (collision == (heroType | pipeType))
+    if (collision == (heroType | scientistType))
         [self hitScientistWith:contact];
     else if (collision == (heroType | terrainType))
         self.countJump = 0;

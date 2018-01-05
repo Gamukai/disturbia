@@ -10,10 +10,10 @@
 #define DGConstants_h
 
 typedef NS_OPTIONS(NSUInteger, CollisionCategory) {
-    heroType    = (1 << 0),
-    terrainType = (1 << 1),
-    pipeType    = (1 << 2),
-    pickupType  = (1 << 3)
+    heroType        = (1 << 0),
+    terrainType     = (1 << 1),
+    scientistType   = (1 << 2),
+    pickupType      = (1 << 3)
 };
 
 #endif /* Constants_h */
