@@ -49,6 +49,7 @@
 		B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E9111F9D8E9E0086461C /* Smoke.sks */; };
 		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
 		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
+		B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D2F20001A2700D54212 /* OrangePickup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,8 @@
 		B520E9121F9D8E9E0086461C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		B5C1E24F1FA7AF41007CD1BF /* Pickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pickup.h; sourceTree = "<group>"; };
 		B5C1E2501FA7AF41007CD1BF /* Pickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pickup.m; sourceTree = "<group>"; };
+		B5E05D2E20001A2700D54212 /* OrangePickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrangePickup.h; sourceTree = "<group>"; };
+		B5E05D2F20001A2700D54212 /* OrangePickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +424,8 @@
 			children = (
 				B5C1E24F1FA7AF41007CD1BF /* Pickup.h */,
 				B5C1E2501FA7AF41007CD1BF /* Pickup.m */,
+				B5E05D2E20001A2700D54212 /* OrangePickup.h */,
+				B5E05D2F20001A2700D54212 /* OrangePickup.m */,
 			);
 			path = Pickup;
 			sourceTree = "<group>";
@@ -521,6 +526,7 @@
 				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
+				B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */,
 				B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E9061F9C34720086461C /* MenuScene.m in Sources */,
