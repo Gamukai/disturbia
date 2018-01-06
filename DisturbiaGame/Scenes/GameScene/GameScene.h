@@ -12,6 +12,7 @@
 #import "PuzzleScene.h"
 #import "DeathScene.h"
 #import "Constants.h"
+#import "Background.h"
 #import "Ground.h"
 #import "Hero.h"
 #import "Scientist.h"

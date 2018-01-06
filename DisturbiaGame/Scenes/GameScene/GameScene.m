@@ -103,7 +103,7 @@
 
 - (void)createWorld
 {
-    [Ground addNewNodeBackgroundTo: self];
+    [Background addNewNodeBackgroundTo: self];
 
     self.pauseButton = [[PauseButton alloc] initWithSize:CGSizeMake(self.frame.size.width * 0.06, self.frame.size.width * 0.06) position:CGPointMake(self.frame.size.width - self.frame.size.width * 0.02 - (self.frame.size.width * 0.03), self.frame.size.height - self.frame.size.height * 0.1 - (self.frame.size.width * 0.06) / 2 + self.frame.size.height * 0.025)];
     [self.pauseButton setZPosition: 100];
