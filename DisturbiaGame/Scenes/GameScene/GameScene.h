@@ -15,6 +15,7 @@
 #import "Ground.h"
 #import "Hero.h"
 #import "ObstacleScientist.h"
+#import "GiantScientist.h"
 #import "OrangePickup.h"
 #import "InsanityBar.h"
 #import "PauseLabel.h"

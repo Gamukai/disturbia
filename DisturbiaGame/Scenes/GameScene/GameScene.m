@@ -215,7 +215,7 @@
     int sort = arc4random()%3;
 
     if (sort == 0)
-        [ObstacleScientist addNewCrazyNodeTo:self];
+        [GiantScientist createNodeOnParent: self];
     else
         [ObstacleScientist addNewNodeTo:self];
 }
