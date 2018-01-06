@@ -15,6 +15,7 @@ static const CGFloat duration = 5.0;
 + (instancetype) createNodeOnParent: (SKNode *) parentNode
 {
     Ground* ground = [[Ground alloc] initWithParent: parentNode];
+    ground.delegate = parentNode;
     [parentNode addChild: ground];
     return ground;
 }
@@ -62,6 +63,37 @@ static const CGFloat duration = 5.0;
                                             [SKAction moveToX: -1.0 * parent.frame.size.width duration: duration],
                                             [SKAction moveToX: 0 duration:.0f]
                                             ]]]];
+}
+
+- (void) handleBeginContactWithOtherNode: (SKNode *) otherNode
+{
+
+}
+
+- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
+{
+    if (otherNode)
+    {
+        if (_delegate) [_delegate groundDidTouched];
+    }
+}
+
+#pragma mark - ContactListener
+
+- (void) didBeginContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleBeginContactWithOtherNode: otherNode];
+}
+
+- (void) didEndContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end
