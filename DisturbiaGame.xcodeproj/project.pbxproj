@@ -50,6 +50,7 @@
 		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
 		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
 		B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D2F20001A2700D54212 /* OrangePickup.m */; };
+		B5E05D33200056C000D54212 /* GiantScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D32200056C000D54212 /* GiantScientist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,8 @@
 		B5C1E2501FA7AF41007CD1BF /* Pickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pickup.m; sourceTree = "<group>"; };
 		B5E05D2E20001A2700D54212 /* OrangePickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrangePickup.h; sourceTree = "<group>"; };
 		B5E05D2F20001A2700D54212 /* OrangePickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickup.m; sourceTree = "<group>"; };
+		B5E05D31200056C000D54212 /* GiantScientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiantScientist.h; sourceTree = "<group>"; };
+		B5E05D32200056C000D54212 /* GiantScientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiantScientist.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +347,8 @@
 			children = (
 				B520E8F01F99A52A0086461C /* ObstacleScientist.h */,
 				B520E8F11F99A52A0086461C /* ObstacleScientist.m */,
+				B5E05D31200056C000D54212 /* GiantScientist.h */,
+				B5E05D32200056C000D54212 /* GiantScientist.m */,
 			);
 			path = ObstacleScientist;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
 				B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */,
+				B5E05D33200056C000D54212 /* GiantScientist.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
