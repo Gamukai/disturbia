@@ -197,7 +197,7 @@
 
 -(void)addPickup
 {
-    [Pickup addNewNodeTo:self];
+    [OrangePickup createNodeOnParent: self];
 }
 
 - (void)createEnemy
