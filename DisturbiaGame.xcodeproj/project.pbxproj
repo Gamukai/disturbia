@@ -51,6 +51,7 @@
 		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
 		B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D2F20001A2700D54212 /* OrangePickup.m */; };
 		B5E05D33200056C000D54212 /* GiantScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D32200056C000D54212 /* GiantScientist.m */; };
+		B5E05D372000660000D54212 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D362000660000D54212 /* Background.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,8 @@
 		B5E05D2F20001A2700D54212 /* OrangePickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickup.m; sourceTree = "<group>"; };
 		B5E05D31200056C000D54212 /* GiantScientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiantScientist.h; sourceTree = "<group>"; };
 		B5E05D32200056C000D54212 /* GiantScientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiantScientist.m; sourceTree = "<group>"; };
+		B5E05D352000660000D54212 /* Background.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		B5E05D362000660000D54212 /* Background.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +303,7 @@
 				B520E8EB1F99A3CD0086461C /* InsanityBar */,
 				B520E8E71F99A2800086461C /* PauseButton */,
 				B520E8E31F99A1580086461C /* PauseLabel */,
+				B5E05D34200065D600D54212 /* Background */,
 				B520E8DF1F999F9E0086461C /* Ground */,
 				B520E8FB1F99A90B0086461C /* PuzzleLight */,
 			);
@@ -435,6 +439,15 @@
 			path = Pickup;
 			sourceTree = "<group>";
 		};
+		B5E05D34200065D600D54212 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				B5E05D352000660000D54212 /* Background.h */,
+				B5E05D362000660000D54212 /* Background.m */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,6 +544,7 @@
 				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
+				B5E05D372000660000D54212 /* Background.m in Sources */,
 				B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */,
 				B520E8F21F99A52A0086461C /* Scientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
