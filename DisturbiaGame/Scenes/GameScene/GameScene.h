@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "Ground.h"
 #import "Hero.h"
-#import "ObstacleScientist.h"
+#import "Scientist.h"
 #import "GiantScientist.h"
 #import "OrangePickup.h"
 #import "InsanityBar.h"

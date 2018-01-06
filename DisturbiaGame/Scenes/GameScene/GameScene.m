@@ -217,7 +217,7 @@
     if (sort == 0)
         [GiantScientist createNodeOnParent: self];
     else
-        [ObstacleScientist addNewNodeTo:self];
+        [Scientist createNodeOnParent: self];
 }
 
 - (void)die

@@ -39,7 +39,7 @@
 		B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E51F99A16A0086461C /* PauseLabel.m */; };
 		B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8E91F99A2FB0086461C /* PauseButton.m */; };
 		B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8ED1F99A3F20086461C /* InsanityBar.m */; };
-		B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F11F99A52A0086461C /* ObstacleScientist.m */; };
+		B520E8F21F99A52A0086461C /* Scientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F11F99A52A0086461C /* Scientist.m */; };
 		B520E8FA1F99A89D0086461C /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F91F99A89D0086461C /* Hero.m */; };
 		B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8FD1F99A93C0086461C /* PuzzleLight.m */; };
 		B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9011F9A41B80086461C /* CutscenePrologue.m */; };
@@ -97,8 +97,8 @@
 		B520E8E91F99A2FB0086461C /* PauseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseButton.m; sourceTree = "<group>"; };
 		B520E8EC1F99A3F20086461C /* InsanityBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsanityBar.h; sourceTree = "<group>"; };
 		B520E8ED1F99A3F20086461C /* InsanityBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsanityBar.m; sourceTree = "<group>"; };
-		B520E8F01F99A52A0086461C /* ObstacleScientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObstacleScientist.h; sourceTree = "<group>"; };
-		B520E8F11F99A52A0086461C /* ObstacleScientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObstacleScientist.m; sourceTree = "<group>"; };
+		B520E8F01F99A52A0086461C /* Scientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scientist.h; sourceTree = "<group>"; };
+		B520E8F11F99A52A0086461C /* Scientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scientist.m; sourceTree = "<group>"; };
 		B520E8F81F99A89D0086461C /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		B520E8F91F99A89D0086461C /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
 		B520E8FC1F99A93C0086461C /* PuzzleLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleLight.h; sourceTree = "<group>"; };
@@ -345,8 +345,8 @@
 		B520E8EF1F99A50C0086461C /* ObstacleScientist */ = {
 			isa = PBXGroup;
 			children = (
-				B520E8F01F99A52A0086461C /* ObstacleScientist.h */,
-				B520E8F11F99A52A0086461C /* ObstacleScientist.m */,
+				B520E8F01F99A52A0086461C /* Scientist.h */,
+				B520E8F11F99A52A0086461C /* Scientist.m */,
 				B5E05D31200056C000D54212 /* GiantScientist.h */,
 				B5E05D32200056C000D54212 /* GiantScientist.m */,
 			);
@@ -532,7 +532,7 @@
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
 				B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */,
-				B520E8F21F99A52A0086461C /* ObstacleScientist.m in Sources */,
+				B520E8F21F99A52A0086461C /* Scientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E9061F9C34720086461C /* MenuScene.m in Sources */,
 				B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */,

@@ -9,9 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Constants.h"
 
-@interface ObstacleScientist : SKSpriteNode
+@interface Scientist : SKSpriteNode
 
-+ (void)addNewNodeTo:(SKNode *)parentNode;
-+ (void)addNewCrazyNodeTo: (SKNode*) parentNode;
++ (instancetype) createNodeOnParent: (SKNode *) parentNode;
+- (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end
