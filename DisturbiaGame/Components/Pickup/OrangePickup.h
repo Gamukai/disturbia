@@ -9,16 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "Constants.h"
+#import "ContactListener.h"
 
-//@protocol OrangePickupDelegate
-//
-//- (void) pickDidCollected;
-//
-//@end
+@protocol OrangePickupDelegate
 
-@interface OrangePickup : SKSpriteNode
+- (void) pickupDidCollected;
 
-//@property (nonatomic, assign) id<OrangePickupDelegate> delegate;
+@end
+
+@interface OrangePickup : SKSpriteNode <ContactListener>
+
+@property (nonatomic, assign) id<OrangePickupDelegate> delegate;
 
 + (instancetype) createNodeOnParent: (SKNode *) parentNode;
 

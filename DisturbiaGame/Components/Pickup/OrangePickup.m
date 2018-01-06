@@ -17,6 +17,7 @@ static const CGFloat duration = 4.0;
 + (instancetype) createNodeOnParent: (SKNode *) parentNode
 {
     OrangePickup* pickup = [[OrangePickup alloc] initWithParent: parentNode];
+    pickup.delegate = parentNode;
     [parentNode addChild: pickup];
     return pickup;
 }
@@ -45,6 +46,41 @@ static const CGFloat duration = 4.0;
 {
     [self runAction: [SKAction sequence: @[[SKAction moveToX: finalPosition duration: duration], [SKAction removeFromParent]]]];
     [self runAction: [SKAction repeatActionForever: [SKAction rotateByAngle: 360.0 duration: 30.0]]];
+}
+
+- (void) handleBeginContactWithOtherNode: (SKNode *) otherNode
+{
+    if (otherNode)
+    {
+        [self.parent runAction: [SKAction playSoundFileNamed:@"purple" waitForCompletion: NO]];
+        [self removeFromParent];
+    }
+}
+
+- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
+{
+    if (otherNode)
+    {
+        if (_delegate) [_delegate pickupDidCollected];
+    }
+}
+
+#pragma mark - ContactListener
+
+- (void) didBeginContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleBeginContactWithOtherNode: otherNode];
+}
+
+- (void) didEndContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end
