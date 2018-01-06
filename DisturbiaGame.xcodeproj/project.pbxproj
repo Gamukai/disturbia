@@ -55,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B51834A320018098008B9A67 /* ContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B51834A220018071008B9A67 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B51834A320018098008B9A67 /* ContactListener.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B520E84F1F98ECA90086461C = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +164,7 @@
 		B520E85A1F98ECA90086461C /* DisturbiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				B51834A220018071008B9A67 /* Protocols */,
 				B520E90F1F9D8D190086461C /* Effects */,
 				B520E8DE1F999F8F0086461C /* Components */,
 				B520E87C1F99980D0086461C /* Helpers */,
