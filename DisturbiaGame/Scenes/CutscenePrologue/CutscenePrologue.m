@@ -135,12 +135,8 @@
     }
     else
     {
-        NSLog(@"%@", [self.data objectForKey: @"Tutorial"]);
-
         [self.data setObject:[NSNumber numberWithBool: YES] forKey:@"Tutorial"];
         [self.data writeToFile: [[NSBundle mainBundle] pathForResource: @"data" ofType:@"plist"] atomically:YES];
-
-        NSLog(@"%@", [self.data objectForKey: @"Tutorial"]);
 
         SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
         GameScene *newScene = [[GameScene alloc] initWithSize: self.size andDistance:0 andInsanity:0];

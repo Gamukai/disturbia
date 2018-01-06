@@ -36,7 +36,6 @@
 
 - (void) finishScene
 {
-    NSLog(@"Diparou no fim");
     NSInteger distance = [[self.data objectForKey:@"Distance"] integerValue];
     BOOL success = (self.clickCount == self.numberOfLights);
 
@@ -50,7 +49,6 @@
     [self.data setObject: [NSNumber numberWithInteger: self.parentInsanity] forKey:@"Insanity"];
     [self.data setObject: [NSNumber numberWithInteger: distance] forKey:@"Distance"];
 
-    NSLog(@"%@", self.data);
     [[PlistManager sharedManager] writeFileWith: self.data];
 
     [self.view presentScene: self.previousGameScene];

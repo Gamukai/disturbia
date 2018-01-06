@@ -38,7 +38,6 @@
 - (void) didMoveToView:(SKView *)view
 {
     self.data = [[PlistManager sharedManager] readFile];
-    NSLog(@"%@", self.data);
 
     self.distance = [[self.data objectForKey:@"Distance"] integerValue];
 
@@ -130,7 +129,7 @@
 
 - (void)createGround
 {
-    [Ground createNodeOnParent: self]; // [Ground addNewNodeTo:self];
+    [Ground createNodeOnParent: self];
 }
 
 - (void)createPause

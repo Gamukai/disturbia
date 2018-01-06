@@ -18,8 +18,6 @@
 
     self.data = [[PlistManager sharedManager] readFile];
 
-    NSLog(@"%@", [self.data objectForKey: @"Tutorial"]);
-
     [self createWorld];
     [self createLogo];
     [self createStartButton];

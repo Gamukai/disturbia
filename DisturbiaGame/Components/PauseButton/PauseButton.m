@@ -30,7 +30,6 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Ronaldo Balão");
     if (self.isPaused)
     {
         SKTexture *pauseTexture = [SKTexture textureWithImageNamed: @"pause"];
