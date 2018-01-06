@@ -9,10 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "Constants.h"
 
-@interface Ground : SKNode
+@interface Ground : SKSpriteNode
 
-+ (void)addNewNodeTo: (SKNode *) parentNode;
-
-+ (void)addNewNodeBackgroundTo:(SKNode *)parentNode;
++ (instancetype) createNodeOnParent: (SKNode *) parentNode;
+- (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end

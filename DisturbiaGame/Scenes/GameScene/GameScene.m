@@ -130,7 +130,7 @@
 
 - (void)createGround
 {
-    [Ground addNewNodeTo:self];
+    [Ground createNodeOnParent: self]; // [Ground addNewNodeTo:self];
 }
 
 - (void)createPause
