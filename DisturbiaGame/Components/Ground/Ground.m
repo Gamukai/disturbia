@@ -67,11 +67,6 @@ static const CGFloat duration = 5.0;
 
 - (void) handleBeginContactWithOtherNode: (SKNode *) otherNode
 {
-
-}
-
-- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
-{
     if (otherNode)
     {
         if (_delegate) [_delegate groundDidTouched];
@@ -90,10 +85,7 @@ static const CGFloat duration = 5.0;
 
 - (void) didEndContact:(SKPhysicsContact *)contact
 {
-    SKNode * otherNode = contact.bodyA.categoryBitMask == terrainType
-    ? contact.bodyB.node : contact.bodyA.node;
 
-    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end
