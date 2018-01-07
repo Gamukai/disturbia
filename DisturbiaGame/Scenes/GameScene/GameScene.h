@@ -42,7 +42,6 @@
 @property (nonatomic, strong) PauseLabel *pauseLabel;
 @property (nonatomic, strong) NSTimer *pickupTimer;
 @property (nonatomic, strong) NSTimer *obstacleTimer;
-@property (nonatomic, strong) PauseButton *pauseButton;
 @property (nonatomic, assign) NSUInteger countJump;
 @property (nonatomic, strong) NSArray *visualFX;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;

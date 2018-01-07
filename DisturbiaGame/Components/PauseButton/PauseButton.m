@@ -16,14 +16,23 @@
 
 @implementation PauseButton
 
-- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position
++ (instancetype) createNodeOnParent: (SKNode *) parentNode
 {
-    SKTexture *pauseTexture = [SKTexture textureWithImageNamed: @"pause"];
-    if (self = [super initWithTexture:pauseTexture color:[UIColor clearColor] size:size])
-    {
-        [self setPosition:position];
+    PauseButton *pauseButton = [[PauseButton alloc] initWithParent: parentNode];
+    pauseButton.delegate = parentNode;
+    [parentNode addChild: pauseButton];
+    return pauseButton;
+}
+
+- (instancetype) initWithParent: (SKNode *) parentNode
+{
+    self = [super initWithImageNamed:@"pause"];
+    if (self) {
+        self.size = CGSizeMake(parentNode.frame.size.width * 0.06, parentNode.frame.size.width * 0.06);
+        self.position = CGPointMake(parentNode.frame.size.width - parentNode.frame.size.width * 0.02 - (parentNode.frame.size.width * 0.03), parentNode.frame.size.height - parentNode.frame.size.height * 0.1 - (parentNode.frame.size.width * 0.06) / 2 + parentNode.frame.size.height * 0.025);
+        self.zPosition = 100;
         [self setUserInteractionEnabled: YES];
-        self.isPaused = NO;
+        _isPaused = NO;
     }
     return self;
 }

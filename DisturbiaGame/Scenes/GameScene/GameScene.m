@@ -100,10 +100,7 @@
 {
     [Background addNewNodeBackgroundTo: self];
 
-    self.pauseButton = [[PauseButton alloc] initWithSize:CGSizeMake(self.frame.size.width * 0.06, self.frame.size.width * 0.06) position:CGPointMake(self.frame.size.width - self.frame.size.width * 0.02 - (self.frame.size.width * 0.03), self.frame.size.height - self.frame.size.height * 0.1 - (self.frame.size.width * 0.06) / 2 + self.frame.size.height * 0.025)];
-    [self.pauseButton setZPosition: 100];
-    self.pauseButton.delegate = self;
-    [self addChild: self.pauseButton];
+    [PauseButton createNodeOnParent: self];
 
     SKTexture *textureInsanity = [SKTexture textureWithImageNamed:@"insanity-bar-filled"];
     SKSpriteNode *layerInsanity = [SKSpriteNode spriteNodeWithTexture:textureInsanity size:CGSizeMake(self.frame.size.width * 0.5, self.frame.size.height * 0.06)];
@@ -266,14 +263,12 @@
 {
     [(id<ContactListener>) contact.bodyA.node didBeginContact: contact];
     [(id<ContactListener>) contact.bodyB.node didBeginContact: contact];
-    NSLog(@"vejamos: 1");
 }
 
 - (void) didEndContact: (SKPhysicsContact *) contact
 {
     [(id<ContactListener>) contact.bodyA.node didEndContact: contact];
     [(id<ContactListener>) contact.bodyB.node didEndContact: contact];
-    NSLog(@"vejamos: 100");
 }
 
 #pragma mark - Pause Button Delegate

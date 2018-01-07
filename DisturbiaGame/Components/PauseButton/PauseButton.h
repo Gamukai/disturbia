@@ -21,6 +21,8 @@
 
 @property (weak) id<PauseButtonDelegate> delegate;
 
-- (instancetype) initWithSize:(CGSize)size position:(CGPoint)position;
++ (instancetype) createNodeOnParent: (SKNode *) parentNode;
+
+- (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end
