@@ -78,7 +78,7 @@ static const CGFloat duration = 6.0;
 
 - (void) didBeginContact:(SKPhysicsContact *)contact
 {
-    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    SKNode * otherNode = contact.bodyA.categoryBitMask == scientistType
     ? contact.bodyB.node : contact.bodyA.node;
 
     [self handleBeginContactWithOtherNode: otherNode];
@@ -86,7 +86,7 @@ static const CGFloat duration = 6.0;
 
 - (void) didEndContact:(SKPhysicsContact *)contact
 {
-    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
+    SKNode * otherNode = contact.bodyA.categoryBitMask == scientistType
     ? contact.bodyB.node : contact.bodyA.node;
 
     [self handleEndContactWithOtherNode: otherNode];
