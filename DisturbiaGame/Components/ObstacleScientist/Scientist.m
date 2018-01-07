@@ -63,13 +63,6 @@ static const CGFloat duration = 6.0;
     {
         [self.parent runAction: [SKAction playSoundFileNamed:@"green" waitForCompletion: NO]];
         [self removeFromParent];
-    }
-}
-
-- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
-{
-    if (otherNode)
-    {
         if (_delegate) [_delegate scientistDidContacted];
     }
 }
@@ -86,10 +79,7 @@ static const CGFloat duration = 6.0;
 
 - (void) didEndContact:(SKPhysicsContact *)contact
 {
-    SKNode * otherNode = contact.bodyA.categoryBitMask == scientistType
-    ? contact.bodyB.node : contact.bodyA.node;
 
-    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end
