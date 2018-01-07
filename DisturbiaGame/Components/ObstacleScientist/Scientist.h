@@ -8,8 +8,17 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "Constants.h"
+#import "ContactListener.h"
 
-@interface Scientist : SKSpriteNode
+@protocol ScientistDelegate
+
+- (void) scientistDidContacted;
+
+@end
+
+@interface Scientist : SKSpriteNode <ContactListener>
+
+@property (nonatomic, assign) id<ScientistDelegate> delegate;
 
 + (instancetype) createNodeOnParent: (SKNode *) parentNode;
 - (instancetype) initWithParent: (SKNode *) parentNode;
