@@ -10,6 +10,8 @@
 
 @interface PauseLabel : SKLabelNode
 
-- (instancetype) initWithPosition:(CGPoint)position fontSize:(CGFloat)fontSize;
++ (instancetype) createNodeOnParent: (SKNode *) parentNode;
+
+- (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end

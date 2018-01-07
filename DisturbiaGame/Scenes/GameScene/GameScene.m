@@ -118,9 +118,7 @@
 
 - (void)createPause
 {
-    self.pauseLabel = [[PauseLabel alloc] initWithPosition:CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2) fontSize:self.frame.size.height * 0.1];
-
-    [self addChild: self.pauseLabel];
+    _pauseLabel = [PauseLabel createNodeOnParent: self];
 }
 
 - (void)resetStoredValues
@@ -267,7 +265,7 @@
 - (void) play
 {
     self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval:3.4 target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
-    [self.pauseLabel setText: @""];
+    [_pauseLabel setText: @""];
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO]];
     [self setPaused: NO];
 
@@ -293,7 +291,7 @@
 {
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO] completion:^{[self setPaused: YES];}];
     [self.obstacleTimer invalidate];
-    self.pauseLabel.text = @"PAUSED";
+    _pauseLabel.text = @"PAUSED";
 
     [self setUserInteractionEnabled:NO];
 

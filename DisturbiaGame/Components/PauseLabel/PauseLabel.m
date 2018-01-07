@@ -10,14 +10,20 @@
 
 @implementation PauseLabel
 
-- (instancetype) initWithPosition:(CGPoint)position fontSize:(CGFloat)fontSize
++ (instancetype) createNodeOnParent: (SKNode *) parentNode
 {
-    if (self = [super init])
-    {
-        self.fontSize = fontSize;
+    PauseLabel *pauseLabel = [[PauseLabel alloc] initWithParent: parentNode];
+    [parentNode addChild: pauseLabel];
+    return pauseLabel;
+}
+
+- (instancetype) initWithParent: (SKNode *) parentNode
+{
+    if (self = [super init]) {
+        self.fontSize = parentNode.frame.size.height * 0.1;
         self.fontColor = [UIColor colorWithRed:0.521569 green:0.768627 blue:0.254902 alpha:1];
         self.fontName = @"8BIT WONDER";
-        [self setPosition: position];
+        self.position = CGPointMake(parentNode.frame.size.width / 2, parentNode.frame.size.height / 2);
         [self setZPosition: 100.0];
     }
     return self;
