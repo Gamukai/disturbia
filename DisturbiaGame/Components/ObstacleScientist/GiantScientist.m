@@ -16,6 +16,7 @@ static const CGFloat duration = 6.0;
 + (instancetype) createNodeOnParent: (SKNode *) parentNode
 {
     GiantScientist* scientist = [[GiantScientist alloc] initWithParent: parentNode];
+    scientist.delegate = parentNode;
     [parentNode addChild: scientist];
     return scientist;
 }
@@ -54,6 +55,41 @@ static const CGFloat duration = 6.0;
 
     [self runAction: [SKAction sequence: @[[SKAction moveToX:finalPosition duration:duration],[SKAction removeFromParent]]]];
     [self runAction: [SKAction repeatActionForever: [SKAction animateWithTextures:animationFrames timePerFrame:0.01f]]];
+}
+
+- (void) handleBeginContactWithOtherNode: (SKNode *) otherNode
+{
+    if (otherNode)
+    {
+        [self.parent runAction: [SKAction playSoundFileNamed:@"green" waitForCompletion: NO]];
+        [self removeFromParent];
+    }
+}
+
+- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
+{
+    if (otherNode)
+    {
+        if (_delegate) [_delegate giantScientistDidContacted];
+    }
+}
+
+#pragma mark - ContactListener
+
+- (void) didBeginContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == scientistType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleBeginContactWithOtherNode: otherNode];
+}
+
+- (void) didEndContact:(SKPhysicsContact *)contact
+{
+    SKNode * otherNode = contact.bodyA.categoryBitMask == scientistType
+    ? contact.bodyB.node : contact.bodyA.node;
+
+    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end
