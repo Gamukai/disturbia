@@ -22,8 +22,9 @@
 #import "PauseLabel.h"
 #import "PauseButton.h"
 #import "PlistManager.h"
+#import "ContactListener.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate>{
+@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate> {
 
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "ContactListener.h"
 
 @implementation GameScene
 
@@ -264,44 +265,23 @@
     return a > b ? a : b;
 }
 
-- (void)collectPickupWith:(SKPhysicsContact *)contact
+#pragma mark - Physics Contact Delegate
+
+- (void) didBeginContact: (SKPhysicsContact *) contact
 {
-    [self runAction: [SKAction playSoundFileNamed:@"purple" waitForCompletion: NO]];
-
-    self.insanity = [self maxBetween:0 and:self.insanity - 15];
-    [self modifyInsanity];
-
-    contact.bodyA.categoryBitMask == pickupType
-    ? [contact.bodyA.node removeFromParent]
-    : [contact.bodyB.node removeFromParent];
+    [(id<ContactListener>) contact.bodyA.node didBeginContact: contact];
+    [(id<ContactListener>) contact.bodyB.node didBeginContact: contact];
+    NSLog(@"vejamos: 1");
 }
 
-- (void)hitScientistWith:(SKPhysicsContact *)contact
+- (void) didEndContact: (SKPhysicsContact *) contact
 {
-    [self runAction: [SKAction playSoundFileNamed:@"green" waitForCompletion: NO]];
-
-    self.insanity = self.insanity + 20;
-    [self modifyInsanity];
-
-    contact.bodyA.categoryBitMask == scientistType
-    ? [contact.bodyA.node removeFromParent]
-    : [contact.bodyB.node removeFromParent];
+    [(id<ContactListener>) contact.bodyA.node didEndContact: contact];
+    [(id<ContactListener>) contact.bodyB.node didEndContact: contact];
+    NSLog(@"vejamos: 100");
 }
 
-#pragma mark - SKPhysicsContactDelegate
-
-- (void)didBeginContact:(SKPhysicsContact *)contact
-{
-    uint32_t collision = (contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask);
-    if (collision == (heroType | scientistType))
-        [self hitScientistWith:contact];
-    else if (collision == (heroType | terrainType))
-        self.countJump = 0;
-    else if (collision == (heroType | pickupType))
-        [self collectPickupWith:contact];
-}
-
-#pragma mark - DGPauseButtonDelegate
+#pragma mark - Pause Button Delegate
 
 - (void) play
 {
@@ -337,6 +317,37 @@
     [self setUserInteractionEnabled:NO];
 
     [self.audioPlayer pause];
+}
+
+#pragma mark - Ground Delegate
+
+- (void) groundDidTouched
+{
+    _countJump = 0;
+}
+
+#pragma mark - Orange Pickup Delegate
+
+- (void) pickupDidCollected
+{
+    _insanity = [self maxBetween: 0 and: _insanity - 15];
+    [self modifyInsanity];
+}
+
+#pragma mark - Scientist Delegate
+
+- (void) scientistDidContacted
+{
+    _insanity = _insanity + 20;
+    [self modifyInsanity];
+}
+
+#pragma mark - Giant Scientist Delegate
+
+- (void) giantScientistDidContacted
+{
+    _insanity = _insanity + 40;
+    [self modifyInsanity];
 }
 
 @end
