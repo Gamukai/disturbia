@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51834A92001E313008B9A67 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834A82001E313008B9A67 /* Score.m */; };
 		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
 		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
 		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		B51834A320018098008B9A67 /* ContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
+		B51834A72001E313008B9A67 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		B51834A82001E313008B9A67 /* Score.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,6 +145,23 @@
 				B51834A320018098008B9A67 /* ContactListener.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B51834A42001E225008B9A67 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				B51834A52001E2FD008B9A67 /* Score */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		B51834A52001E2FD008B9A67 /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				B51834A72001E313008B9A67 /* Score.h */,
+				B51834A82001E313008B9A67 /* Score.m */,
+			);
+			path = Score;
 			sourceTree = "<group>";
 		};
 		B520E84F1F98ECA90086461C = {
@@ -307,6 +327,7 @@
 		B520E8DE1F999F8F0086461C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B51834A42001E225008B9A67 /* HUD */,
 				B5C1E24E1FA7AF27007CD1BF /* Pickup */,
 				B520E8F71F99A87D0086461C /* Hero */,
 				B520E8EF1F99A50C0086461C /* ObstacleScientist */,
@@ -569,6 +590,7 @@
 				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
 				B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */,
+				B51834A92001E313008B9A67 /* Score.m in Sources */,
 				B5E05D33200056C000D54212 /* GiantScientist.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
 			);
