@@ -54,14 +54,7 @@ static const CGFloat duration = 4.0;
     {
         [self.parent runAction: [SKAction playSoundFileNamed:@"purple" waitForCompletion: NO]];
         [self removeFromParent];
-    }
-}
-
-- (void) handleEndContactWithOtherNode: (SKNode *) otherNode
-{
-    if (otherNode)
-    {
-        if (_delegate) [_delegate pickupDidCollected];
+        if (_delegate) [_delegate orangePickupDidCollected];
     }
 }
 
@@ -77,10 +70,7 @@ static const CGFloat duration = 4.0;
 
 - (void) didEndContact:(SKPhysicsContact *)contact
 {
-    SKNode * otherNode = contact.bodyA.categoryBitMask == pickupType
-    ? contact.bodyB.node : contact.bodyA.node;
 
-    [self handleEndContactWithOtherNode: otherNode];
 }
 
 @end

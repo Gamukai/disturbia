@@ -328,7 +328,7 @@
 
 #pragma mark - Orange Pickup Delegate
 
-- (void) pickupDidCollected
+- (void) orangePickupDidCollected
 {
     _insanity = [self maxBetween: 0 and: _insanity - 15];
     [self modifyInsanity];

@@ -13,7 +13,7 @@
 
 @protocol OrangePickupDelegate
 
-- (void) pickupDidCollected;
+- (void) orangePickupDidCollected;
 
 @end
 
