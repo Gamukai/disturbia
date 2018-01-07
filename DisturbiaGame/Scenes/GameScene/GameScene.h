@@ -18,6 +18,7 @@
 #import "Scientist.h"
 #import "GiantScientist.h"
 #import "OrangePickup.h"
+#import "Score.h"
 #import "InsanityBar.h"
 #import "PauseLabel.h"
 #import "PauseButton.h"
@@ -33,7 +34,7 @@
 @property (nonatomic, strong) Hero *hero;
 @property (nonatomic, strong) NSMutableDictionary *data;
 @property (nonatomic, assign) NSUInteger distance;
-@property (nonatomic, strong) SKLabelNode *distanceLabel;
+@property (nonatomic, strong) Score *distanceLabel;
 @property (nonatomic, assign) NSUInteger insanity;
 @property (nonatomic, assign) NSUInteger insanityFamily;
 @property (nonatomic, assign) NSUInteger auxInsanity;

@@ -92,13 +92,8 @@
 
 - (void)createScoreLabel
 {
-    self.distanceLabel = [[SKLabelNode alloc] initWithFontNamed:@"8BIT WONDER"];
-    self.distanceLabel.fontSize = self.frame.size.height * 0.07;
-    self.distanceLabel.fontColor = [UIColor colorWithRed:0.521569 green:0.768627 blue:0.254902 alpha:1];
-    [self.distanceLabel setPosition:CGPointMake(self.frame.size.width * 0.13, self.frame.size.height - self.frame.size.height * 0.2)];
-    [self.distanceLabel setText:[NSString stringWithFormat:@"%ld", (unsigned long) self.distance]];
-    [self.distanceLabel setZPosition: 100];
-    [self addChild: self.distanceLabel];
+    _distanceLabel = [Score createNodeOnParent: self];
+    [_distanceLabel setNewScoreValue: _distance];
 }
 
 - (void)createWorld
