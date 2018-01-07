@@ -10,7 +10,10 @@
 
 @interface InsanityBar : SKCropNode
 
-- (instancetype)initWithParent: (SKNode *) parentNode;
++ (instancetype) createNodeOnParent: (SKNode *) parentNode;
+
+- (instancetype) initWithParent: (SKNode *) parentNode;
+
 - (void) setProgress: (CGFloat) progress;
 
 @end

@@ -80,9 +80,7 @@
 
 - (void) createInsanityBar
 {
-    self.insanityBar = [[InsanityBar alloc] initWithParent: self];
-    [self.insanityBar setZPosition: 100.00];
-    [self addChild: self.insanityBar];
+    _insanityBar = [InsanityBar createNodeOnParent: self];
 }
 
 - (void)createFX
@@ -101,13 +99,6 @@
     [Background addNewNodeBackgroundTo: self];
 
     [PauseButton createNodeOnParent: self];
-
-    SKTexture *textureInsanity = [SKTexture textureWithImageNamed:@"insanity-bar-filled"];
-    SKSpriteNode *layerInsanity = [SKSpriteNode spriteNodeWithTexture:textureInsanity size:CGSizeMake(self.frame.size.width * 0.5, self.frame.size.height * 0.06)];
-    layerInsanity.anchorPoint = CGPointMake(1.0, 0.0);
-    layerInsanity.position = CGPointMake(self.frame.size.width * 0.53, self.frame.size.height - self.frame.size.height * 0.1);
-    layerInsanity.zPosition = 50.0;
-    [self addChild: layerInsanity];
 
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, -3);
