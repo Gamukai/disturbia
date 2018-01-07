@@ -123,4 +123,16 @@
     }
 }
 
+#pragma mark - ContactListener
+
+- (void) didBeginContact:(SKPhysicsContact *)contact
+{
+
+}
+
+- (void) didEndContact:(SKPhysicsContact *)contact
+{
+
+}
+
 @end
