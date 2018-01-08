@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B51834A92001E313008B9A67 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834A82001E313008B9A67 /* Score.m */; };
+		B51834AD200323A5008B9A67 /* EventTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834AC200323A5008B9A67 /* EventTimer.m */; };
 		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
 		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
 		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
@@ -59,6 +60,8 @@
 		B51834A320018098008B9A67 /* ContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		B51834A72001E313008B9A67 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		B51834A82001E313008B9A67 /* Score.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		B51834AB200323A5008B9A67 /* EventTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventTimer.h; sourceTree = "<group>"; };
+		B51834AC200323A5008B9A67 /* EventTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTimer.m; sourceTree = "<group>"; };
 		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +167,15 @@
 			path = Score;
 			sourceTree = "<group>";
 		};
+		B51834AA2003236D008B9A67 /* EventTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B51834AB200323A5008B9A67 /* EventTimer.h */,
+				B51834AC200323A5008B9A67 /* EventTimer.m */,
+			);
+			path = EventTimer;
+			sourceTree = "<group>";
+		};
 		B520E84F1F98ECA90086461C = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,7 @@
 		B520E87C1F99980D0086461C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B51834AA2003236D008B9A67 /* EventTimer */,
 				B520E87F1F9999140086461C /* PlistManager */,
 			);
 			path = Helpers;
@@ -592,6 +605,7 @@
 				B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */,
 				B51834A92001E313008B9A67 /* Score.m in Sources */,
 				B5E05D33200056C000D54212 /* GiantScientist.m in Sources */,
+				B51834AD200323A5008B9A67 /* EventTimer.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
