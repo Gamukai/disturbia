@@ -11,6 +11,7 @@
 		B51834AD200323A5008B9A67 /* EventTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834AC200323A5008B9A67 /* EventTimer.m */; };
 		B51834B120033A41008B9A67 /* OrangePickupTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B020033A41008B9A67 /* OrangePickupTimer.m */; };
 		B51834B520034407008B9A67 /* ScientistTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B420034407008B9A67 /* ScientistTimer.m */; };
+		B51834B920034A2D008B9A67 /* GiantScientistTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B820034A2D008B9A67 /* GiantScientistTimer.m */; };
 		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
 		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
 		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
@@ -68,6 +69,8 @@
 		B51834B020033A41008B9A67 /* OrangePickupTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickupTimer.m; sourceTree = "<group>"; };
 		B51834B320034407008B9A67 /* ScientistTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScientistTimer.h; sourceTree = "<group>"; };
 		B51834B420034407008B9A67 /* ScientistTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScientistTimer.m; sourceTree = "<group>"; };
+		B51834B720034A2D008B9A67 /* GiantScientistTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiantScientistTimer.h; sourceTree = "<group>"; };
+		B51834B820034A2D008B9A67 /* GiantScientistTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiantScientistTimer.m; sourceTree = "<group>"; };
 		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -176,8 +179,9 @@
 		B51834AA2003236D008B9A67 /* EventTimer */ = {
 			isa = PBXGroup;
 			children = (
-				B51834B2200343EA008B9A67 /* ScientistTimer */,
 				B51834AE20033886008B9A67 /* OrangePickupTimer */,
+				B51834B2200343EA008B9A67 /* ScientistTimer */,
+				B51834B620034A0C008B9A67 /* GiantScientistTimer */,
 				B51834AB200323A5008B9A67 /* EventTimer.h */,
 				B51834AC200323A5008B9A67 /* EventTimer.m */,
 			);
@@ -200,6 +204,15 @@
 				B51834B420034407008B9A67 /* ScientistTimer.m */,
 			);
 			path = ScientistTimer;
+			sourceTree = "<group>";
+		};
+		B51834B620034A0C008B9A67 /* GiantScientistTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B51834B720034A2D008B9A67 /* GiantScientistTimer.h */,
+				B51834B820034A2D008B9A67 /* GiantScientistTimer.m */,
+			);
+			path = GiantScientistTimer;
 			sourceTree = "<group>";
 		};
 		B520E84F1F98ECA90086461C = {
@@ -612,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
+				B51834B920034A2D008B9A67 /* GiantScientistTimer.m in Sources */,
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B51834B520034407008B9A67 /* ScientistTimer.m in Sources */,
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
