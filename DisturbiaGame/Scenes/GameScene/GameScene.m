@@ -52,6 +52,7 @@
 {
     [_orangePickupTimer update];
     [_scientistTimer update];
+    [_giantScientistTimer update];
 
     [self modifyDistance];
     [self modifyInsanity];
@@ -74,7 +75,7 @@
     [self createHero];
     [self createPickupTimer];
     [self createScientistTimer];
-    [self createEnemyTimer];
+    [self createGiantScientistTimer];
     [self createFX];
     [self resetStoredValues];
 }
@@ -113,24 +114,12 @@
 
 - (void) createScientistTimer
 {
-    _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 180 andIntervalBottomValue: 60 andDelegate: self];
+    _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
 }
 
-- (void) createEnemyTimer
+- (void) createGiantScientistTimer
 {
-//    NSTimeInterval interval;
-//
-//    if (_distance < 1000) interval = 2.5 + ((arc4random() % 10) / 10.0);
-//    else if (_distance < 2000) interval = 1.5 + ((arc4random() % 20) / 10.0);
-//    else interval = 0.5 + ((arc4random() % 30) / 10.0);
-//
-//    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewEnemy) userInfo: nil repeats: YES];
-}
-
-- (void)createNewEnemy
-{
-    int sort = arc4random() % 4;
-    sort == 0 ? [GiantScientist createNodeOnParent: self] : [Scientist createNodeOnParent: self];
+    _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
 }
 
 - (void)createFX
@@ -162,8 +151,6 @@
 
     [self.audioPlayer stop];
     self.audioPlayer = nil;
-
-    [self.obstacleTimer invalidate];
 
     SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
     DeathScene *newScene = [DeathScene sceneWithSize: self.size];
@@ -242,7 +229,6 @@
 - (void) play
 {
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO]];
-    [self createEnemyTimer];
     [_pauseLabel setText: @""];
 
     [self setPaused: NO];
@@ -253,7 +239,6 @@
 - (void) pause
 {
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO] completion:^{[self setPaused: YES];}];
-    [_obstacleTimer invalidate];
     _pauseLabel.text = @"PAUSED";
 
     [self setUserInteractionEnabled:NO];
@@ -303,6 +288,13 @@
 - (void) scientistEventDidOccurred
 {
     [Scientist createNodeOnParent: self];
+}
+
+#pragma mark - Giant Scientist Timer Delegate
+
+- (void) giantScientistEventDidOccurred
+{
+    [GiantScientist createNodeOnParent: self];
 }
 
 @end

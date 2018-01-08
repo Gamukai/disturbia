@@ -26,8 +26,9 @@
 #import "ContactListener.h"
 #import "OrangePickupTimer.h"
 #import "ScientistTimer.h"
+#import "GiantScientistTimer.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate> {
+@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate> {
 
 }
 
@@ -44,7 +45,7 @@
 @property (nonatomic, strong) PauseLabel *pauseLabel;
 @property (nonatomic, strong) OrangePickupTimer *orangePickupTimer;
 @property (nonatomic, strong) ScientistTimer *scientistTimer;
-@property (nonatomic, strong) NSTimer *obstacleTimer;
+@property (nonatomic, strong) GiantScientistTimer *giantScientistTimer;
 @property (nonatomic, assign) NSUInteger countJump;
 @property (nonatomic, strong) NSArray *visualFX;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
