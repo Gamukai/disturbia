@@ -77,7 +77,7 @@
     [self createScientistTimer];
     [self createGiantScientistTimer];
     [self createScoreTimer];
-    [self createFX];
+    [self createFilterManager];
     [self resetStoredValues];
 }
 
@@ -127,9 +127,9 @@
     _scoreTimer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
 }
 
-- (void)createFX
+- (void) createFilterManager
 {
-    self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
+    _filterManager = [[FilterManager alloc] initWithEffectNode: self];
 }
 
 - (void)resetStoredValues
@@ -164,27 +164,28 @@
     {
         self.auxInsanity = 0;
         self.insanity++;
-        [self fxWillChange];
+//        [self fxWillChange];
+        [_filterManager filterWillChangeWithOriginValue: _insanity];
         [self.insanityBar setProgress: self.insanity];
     }
     else self.auxInsanity++;
 }
 
-- (void)fxWillChange
-{
-    if (self.insanity > 80 && self.insanityFamily != 6)
-        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
-    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
-        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
-    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
-        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
-    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
-        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
-    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
-        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
-    else if(self.insanity < 11 && self.insanityFamily != 1)
-        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
-}
+//- (void)fxWillChange
+//{
+//    if (self.insanity > 80 && self.insanityFamily != 6)
+//        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
+//    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
+//        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
+//    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
+//        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
+//    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
+//        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
+//    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
+//        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
+//    else if(self.insanity < 11 && self.insanityFamily != 1)
+//        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
+//}
 
 - (void)updateFXWith:(NSString *)fx andVolume:(CGFloat)volume andInsanityFamily:(NSInteger)insanityFamily
 {
