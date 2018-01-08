@@ -25,8 +25,9 @@
 #import "PlistManager.h"
 #import "ContactListener.h"
 #import "OrangePickupTimer.h"
+#import "ScientistTimer.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate> {
+@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate> {
 
 }
 
@@ -42,6 +43,7 @@
 @property (nonatomic, strong) InsanityBar *insanityBar;
 @property (nonatomic, strong) PauseLabel *pauseLabel;
 @property (nonatomic, strong) OrangePickupTimer *orangePickupTimer;
+@property (nonatomic, strong) ScientistTimer *scientistTimer;
 @property (nonatomic, strong) NSTimer *obstacleTimer;
 @property (nonatomic, assign) NSUInteger countJump;
 @property (nonatomic, strong) NSArray *visualFX;

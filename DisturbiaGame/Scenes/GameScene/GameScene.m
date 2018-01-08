@@ -51,6 +51,7 @@
 - (void)update:(CFTimeInterval)currentTime
 {
     [_orangePickupTimer update];
+    [_scientistTimer update];
 
     [self modifyDistance];
     [self modifyInsanity];
@@ -72,6 +73,7 @@
     [self createHUD];
     [self createHero];
     [self createPickupTimer];
+    [self createScientistTimer];
     [self createEnemyTimer];
     [self createFX];
     [self resetStoredValues];
@@ -109,15 +111,20 @@
     _orangePickupTimer = [OrangePickupTimer createNewOrangePickupTimerWithCounter: 0 andIntervalTopValue: 540 andIntervalBottomValue: 300 andDelegate: self];
 }
 
+- (void) createScientistTimer
+{
+    _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 180 andIntervalBottomValue: 60 andDelegate: self];
+}
+
 - (void) createEnemyTimer
 {
-    NSTimeInterval interval;
-
-    if (_distance < 1000) interval = 2.5 + ((arc4random() % 10) / 10.0);
-    else if (_distance < 2000) interval = 1.5 + ((arc4random() % 20) / 10.0);
-    else interval = 0.5 + ((arc4random() % 30) / 10.0);
-
-    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewEnemy) userInfo: nil repeats: YES];
+//    NSTimeInterval interval;
+//
+//    if (_distance < 1000) interval = 2.5 + ((arc4random() % 10) / 10.0);
+//    else if (_distance < 2000) interval = 1.5 + ((arc4random() % 20) / 10.0);
+//    else interval = 0.5 + ((arc4random() % 30) / 10.0);
+//
+//    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewEnemy) userInfo: nil repeats: YES];
 }
 
 - (void)createNewEnemy
@@ -289,6 +296,13 @@
 - (void) orangePickupEventDidOccurred
 {
     [OrangePickup createNodeOnParent: self];
+}
+
+#pragma mark - Scientist Timer Delegate
+
+- (void) scientistEventDidOccurred
+{
+    [Scientist createNodeOnParent: self];
 }
 
 @end
