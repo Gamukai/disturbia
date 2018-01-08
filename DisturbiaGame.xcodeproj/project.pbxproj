@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B51834A92001E313008B9A67 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834A82001E313008B9A67 /* Score.m */; };
 		B51834AD200323A5008B9A67 /* EventTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834AC200323A5008B9A67 /* EventTimer.m */; };
+		B51834B120033A41008B9A67 /* OrangePickupTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B020033A41008B9A67 /* OrangePickupTimer.m */; };
 		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
 		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
 		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
@@ -62,6 +63,8 @@
 		B51834A82001E313008B9A67 /* Score.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		B51834AB200323A5008B9A67 /* EventTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventTimer.h; sourceTree = "<group>"; };
 		B51834AC200323A5008B9A67 /* EventTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTimer.m; sourceTree = "<group>"; };
+		B51834AF20033A41008B9A67 /* OrangePickupTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrangePickupTimer.h; sourceTree = "<group>"; };
+		B51834B020033A41008B9A67 /* OrangePickupTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickupTimer.m; sourceTree = "<group>"; };
 		B520E8581F98ECA90086461C /* DisturbiaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisturbiaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -170,10 +173,20 @@
 		B51834AA2003236D008B9A67 /* EventTimer */ = {
 			isa = PBXGroup;
 			children = (
+				B51834AE20033886008B9A67 /* OrangePickupTimer */,
 				B51834AB200323A5008B9A67 /* EventTimer.h */,
 				B51834AC200323A5008B9A67 /* EventTimer.m */,
 			);
 			path = EventTimer;
+			sourceTree = "<group>";
+		};
+		B51834AE20033886008B9A67 /* OrangePickupTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B51834AF20033A41008B9A67 /* OrangePickupTimer.h */,
+				B51834B020033A41008B9A67 /* OrangePickupTimer.m */,
+			);
+			path = OrangePickupTimer;
 			sourceTree = "<group>";
 		};
 		B520E84F1F98ECA90086461C = {
@@ -604,6 +617,7 @@
 				B520E8721F98ECA90086461C /* main.m in Sources */,
 				B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */,
 				B51834A92001E313008B9A67 /* Score.m in Sources */,
+				B51834B120033A41008B9A67 /* OrangePickupTimer.m in Sources */,
 				B5E05D33200056C000D54212 /* GiantScientist.m in Sources */,
 				B51834AD200323A5008B9A67 /* EventTimer.m in Sources */,
 				B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */,
