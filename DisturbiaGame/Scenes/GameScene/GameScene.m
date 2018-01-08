@@ -54,7 +54,7 @@
     [_scientistTimer update];
     [_giantScientistTimer update];
 
-    [self modifyDistance];
+    [_scoreTimer update];
     [self modifyInsanity];
 }
 
@@ -76,6 +76,7 @@
     [self createPickupTimer];
     [self createScientistTimer];
     [self createGiantScientistTimer];
+    [self createScoreTimer];
     [self createFX];
     [self resetStoredValues];
 }
@@ -94,7 +95,6 @@
     _insanityBar = [InsanityBar createNodeOnParent: self];
 
     _distanceLabel = [Score createNodeOnParent: self];
-    [_distanceLabel setNewScoreValue: _distance];
 
     [PauseButton createNodeOnParent: self];
     _pauseLabel = [PauseLabel createNodeOnParent: self];
@@ -122,6 +122,11 @@
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
 }
 
+- (void) createScoreTimer
+{
+    _scoreTimer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
+}
+
 - (void)createFX
 {
     self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
@@ -138,13 +143,6 @@
 
 #pragma mark - Actions
 
-- (void)setPlayerWith:(NSURL *)url
-{
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
-}
-
 - (void)die
 {
     [self resetStoredValues];
@@ -158,12 +156,6 @@
 }
 
 #pragma mark - Score and Death
-
-- (void)modifyDistance
-{
-    self.distance++;
-    [self.distanceLabel setText:[NSString stringWithFormat:@"%ld", (unsigned long)self.distance]];
-}
 
 - (void)modifyInsanity
 {
@@ -203,6 +195,13 @@
     [self setPlayerWith: url];
 
     self.insanityFamily = insanityFamily;
+}
+
+- (void)setPlayerWith:(NSURL *)url
+{
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    self.audioPlayer.numberOfLoops = -1;
+    [self.audioPlayer play];
 }
 
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
@@ -295,6 +294,13 @@
 - (void) giantScientistEventDidOccurred
 {
     [GiantScientist createNodeOnParent: self];
+}
+
+#pragma mark - Score Timer Delegate
+
+- (void) ScoreEventDidOccurredWithScore: (NSInteger) score
+{
+    [_distanceLabel setNewScoreValue: score];
 }
 
 @end
