@@ -67,41 +67,32 @@
 - (void)setup
 {
     [self createWorld];
-    [self createInsanityBar];
-    [self createScoreLabel];
+    [self createHUD];
     [self createHero];
-    [self createGround];
-    [self createPickup];
-    [self createEnemy];
+    [self createPickupTimer];
+    [self createEnemyTimer];
     [self createFX];
-    [self createPause];
     [self resetStoredValues];
-}
-
-- (void) createInsanityBar
-{
-    _insanityBar = [InsanityBar createNodeOnParent: self];
-}
-
-- (void)createFX
-{
-    self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
-}
-
-- (void)createScoreLabel
-{
-    _distanceLabel = [Score createNodeOnParent: self];
-    [_distanceLabel setNewScoreValue: _distance];
 }
 
 - (void)createWorld
 {
     [Background addNewNodeBackgroundTo: self];
-
-    [PauseButton createNodeOnParent: self];
+    [Ground createNodeOnParent: self];
 
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGVectorMake(0, -3);
+}
+
+- (void) createHUD
+{
+    _insanityBar = [InsanityBar createNodeOnParent: self];
+
+    _distanceLabel = [Score createNodeOnParent: self];
+    [_distanceLabel setNewScoreValue: _distance];
+
+    [PauseButton createNodeOnParent: self];
+    _pauseLabel = [PauseLabel createNodeOnParent: self];
 }
 
 - (void) createHero
@@ -111,14 +102,42 @@
     self.hero.zPosition = 100;
 }
 
-- (void)createGround
+- (void) createPickupTimer
 {
-    [Ground createNodeOnParent: self];
+    NSTimeInterval interval;
+
+    if (_distance < 1000) interval = 4.5 + ((arc4random() % 10) / 10.0);
+    else if (_distance < 2000) interval = 6.5 + ((arc4random() % 20) / 10.0);
+    else interval = 8.5 + ((arc4random() % 30) / 10.0);
+
+    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewPickup) userInfo: nil repeats: YES];
 }
 
-- (void)createPause
+- (void) createNewPickup
 {
-    _pauseLabel = [PauseLabel createNodeOnParent: self];
+    [OrangePickup createNodeOnParent: self];
+}
+
+- (void) createEnemyTimer
+{
+    NSTimeInterval interval;
+
+    if (_distance < 1000) interval = 2.5 + ((arc4random() % 10) / 10.0);
+    else if (_distance < 2000) interval = 1.5 + ((arc4random() % 20) / 10.0);
+    else interval = 0.5 + ((arc4random() % 30) / 10.0);
+
+    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewEnemy) userInfo: nil repeats: YES];
+}
+
+- (void)createNewEnemy
+{
+    int sort = arc4random() % 4;
+    sort == 0 ? [GiantScientist createNodeOnParent: self] : [Scientist createNodeOnParent: self];
+}
+
+- (void)createFX
+{
+    self.visualFX = [NSArray arrayWithObjects: @"CIPixellate", @"CISpotLight", @"CIColorPosterize", @"CISpotColor", @"CIColorInvert", nil];
 }
 
 - (void)resetStoredValues
@@ -137,68 +156,6 @@
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     self.audioPlayer.numberOfLoops = -1;
     [self.audioPlayer play];
-}
-
-- (void)updateFXWith:(NSString *)fx andVolume:(CGFloat)volume andInsanityFamily:(NSInteger)insanityFamily
-{
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", fx]]];
-
-    [self.audioPlayer setVolume: volume];
-    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: [NSString stringWithFormat:@"%ld", insanityFamily - 1] ofType:@"wav"]];
-    [self setPlayerWith: url];
-
-    self.insanityFamily = insanityFamily;
-}
-
-- (void)fxWillChange
-{
-    if (self.insanity > 80 && self.insanityFamily != 6)
-        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
-    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
-        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
-    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
-        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
-    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
-        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
-    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
-        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
-    else if(self.insanity < 11 && self.insanityFamily != 1)
-        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
-}
-
-- (void)createPickup
-{
-    if (self.distance < 1000)
-        self.pickupTimer = [NSTimer scheduledTimerWithTimeInterval: 4.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
-    else if (self.distance < 2000)
-        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 6.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
-    else
-        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 8.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addPickup) userInfo:nil repeats:YES];
-}
-
--(void)addPickup
-{
-    [OrangePickup createNodeOnParent: self];
-}
-
-- (void)createEnemy
-{
-    if (self.distance < 1000)
-        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 2.5 + ((arc4random() % 10) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
-    else if (self.distance < 2000)
-        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 1.5 + ((arc4random() % 20) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
-    else
-        self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: 0.5 + ((arc4random() % 30) / 10.0) target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
-}
-
-- (void)addEnemy
-{
-    int sort = arc4random()%3;
-
-    if (sort == 0)
-        [GiantScientist createNodeOnParent: self];
-    else
-        [Scientist createNodeOnParent: self];
 }
 
 - (void)die
@@ -236,6 +193,33 @@
     else self.auxInsanity++;
 }
 
+- (void)fxWillChange
+{
+    if (self.insanity > 80 && self.insanityFamily != 6)
+        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
+    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
+        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
+    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
+        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
+    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
+        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
+    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
+        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
+    else if(self.insanity < 11 && self.insanityFamily != 1)
+        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
+}
+
+- (void)updateFXWith:(NSString *)fx andVolume:(CGFloat)volume andInsanityFamily:(NSInteger)insanityFamily
+{
+    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", fx]]];
+
+    [self.audioPlayer setVolume: volume];
+    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: [NSString stringWithFormat:@"%ld", insanityFamily - 1] ofType:@"wav"]];
+    [self setPlayerWith: url];
+
+    self.insanityFamily = insanityFamily;
+}
+
 - (NSInteger)calculatePoints
 {
     return 2 + [[NSNumber numberWithDouble:(self.distance / 1000)] integerValue];
@@ -264,37 +248,22 @@
 
 - (void) play
 {
-    self.obstacleTimer = [NSTimer scheduledTimerWithTimeInterval:3.4 target:self selector:@selector(addEnemy) userInfo:nil repeats:YES];
-    [_pauseLabel setText: @""];
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO]];
+    [self createEnemyTimer];
+    [_pauseLabel setText: @""];
+
     [self setPaused: NO];
-
     [self setUserInteractionEnabled:YES];
-
     [self.audioPlayer play];
-
-    if (self.insanity > 80)
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[4]]]];
-    else if (self.insanity > 60)
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[3]]]];
-    else if (self.insanity > 40)
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[2]]]];
-    else if (self.insanity > 25)
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[1]]]];
-    else if (self.insanity > 10)
-        [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", self.visualFX[0]]]];
-    else
-        [self setFilter: [CIFilter filterWithName: @""]];
 }
 
 - (void) pause
 {
     [self runAction: [SKAction playSoundFileNamed: [NSString stringWithFormat: @"tap"] waitForCompletion: NO] completion:^{[self setPaused: YES];}];
-    [self.obstacleTimer invalidate];
+    [_obstacleTimer invalidate];
     _pauseLabel.text = @"PAUSED";
 
     [self setUserInteractionEnabled:NO];
-
     [self.audioPlayer pause];
 }
 
