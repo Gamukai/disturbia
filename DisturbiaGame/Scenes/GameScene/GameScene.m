@@ -50,6 +50,8 @@
 
 - (void)update:(CFTimeInterval)currentTime
 {
+    [_orangePickupTimer update];
+
     [self modifyDistance];
     [self modifyInsanity];
 }
@@ -104,18 +106,7 @@
 
 - (void) createPickupTimer
 {
-    NSTimeInterval interval;
-
-    if (_distance < 1000) interval = 4.5 + ((arc4random() % 10) / 10.0);
-    else if (_distance < 2000) interval = 6.5 + ((arc4random() % 20) / 10.0);
-    else interval = 8.5 + ((arc4random() % 30) / 10.0);
-
-    _obstacleTimer = [NSTimer scheduledTimerWithTimeInterval: interval target: self selector: @selector(createNewPickup) userInfo: nil repeats: YES];
-}
-
-- (void) createNewPickup
-{
-    [OrangePickup createNodeOnParent: self];
+    _orangePickupTimer = [OrangePickupTimer createNewOrangePickupTimerWithCounter: 0 andIntervalTopValue: 540 andIntervalBottomValue: 300 andDelegate: self];
 }
 
 - (void) createEnemyTimer
@@ -220,11 +211,6 @@
     self.insanityFamily = insanityFamily;
 }
 
-- (NSInteger)calculatePoints
-{
-    return 2 + [[NSNumber numberWithDouble:(self.distance / 1000)] integerValue];
-}
-
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
 {
     return a > b ? a : b;
@@ -296,6 +282,13 @@
 {
     _insanity = _insanity + 40;
     [self modifyInsanity];
+}
+
+#pragma mark - Orange Picker Timer Delegate
+
+- (void) orangePickupEventDidOccurred
+{
+    [OrangePickup createNodeOnParent: self];
 }
 
 @end
