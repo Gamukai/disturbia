@@ -53,6 +53,7 @@
 		B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E90D1F9C37250086461C /* PuzzleScene.m */; };
 		B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E9111F9D8E9E0086461C /* Smoke.sks */; };
 		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
+		B5453F4120035CB50092B260 /* ScoreTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5453F4020035CB50092B260 /* ScoreTimer.m */; };
 		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
 		B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D2F20001A2700D54212 /* OrangePickup.m */; };
 		B5E05D33200056C000D54212 /* GiantScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D32200056C000D54212 /* GiantScientist.m */; };
@@ -130,6 +131,8 @@
 		B520E90D1F9C37250086461C /* PuzzleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleScene.m; sourceTree = "<group>"; };
 		B520E9111F9D8E9E0086461C /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
 		B520E9121F9D8E9E0086461C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		B5453F3F20035CB50092B260 /* ScoreTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreTimer.h; sourceTree = "<group>"; };
+		B5453F4020035CB50092B260 /* ScoreTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreTimer.m; sourceTree = "<group>"; };
 		B5C1E24F1FA7AF41007CD1BF /* Pickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pickup.h; sourceTree = "<group>"; };
 		B5C1E2501FA7AF41007CD1BF /* Pickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pickup.m; sourceTree = "<group>"; };
 		B5E05D2E20001A2700D54212 /* OrangePickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrangePickup.h; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 				B51834AE20033886008B9A67 /* OrangePickupTimer */,
 				B51834B2200343EA008B9A67 /* ScientistTimer */,
 				B51834B620034A0C008B9A67 /* GiantScientistTimer */,
+				B5453F3E20035C8B0092B260 /* ScoreTimer */,
 				B51834AB200323A5008B9A67 /* EventTimer.h */,
 				B51834AC200323A5008B9A67 /* EventTimer.m */,
 			);
@@ -511,6 +515,15 @@
 			path = Smoke;
 			sourceTree = "<group>";
 		};
+		B5453F3E20035C8B0092B260 /* ScoreTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B5453F3F20035CB50092B260 /* ScoreTimer.h */,
+				B5453F4020035CB50092B260 /* ScoreTimer.m */,
+			);
+			path = ScoreTimer;
+			sourceTree = "<group>";
+		};
 		B5C1E24E1FA7AF27007CD1BF /* Pickup */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5453F4120035CB50092B260 /* ScoreTimer.m in Sources */,
 				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
 				B51834B920034A2D008B9A67 /* GiantScientistTimer.m in Sources */,
 				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
