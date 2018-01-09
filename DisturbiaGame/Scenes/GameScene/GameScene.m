@@ -69,12 +69,8 @@
     [self createWorld];
     [self createHUD];
     [self createHero];
-    [self createPickupTimer];
-    [self createScientistTimer];
-    [self createGiantScientistTimer];
-    [self createScoreTimer];
-    [self createAudioManager];
-    [self createFilterManager];
+    [self createTimers];
+    [self createManagers];
     [self resetStoredValues];
 }
 
@@ -104,33 +100,22 @@
     self.hero.zPosition = 100;
 }
 
-- (void) createPickupTimer
+- (void) createTimers
 {
+    // Components
     _orangePickupTimer = [OrangePickupTimer createNewOrangePickupTimerWithCounter: 0 andIntervalTopValue: 540 andIntervalBottomValue: 300 andDelegate: self];
-}
 
-- (void) createScientistTimer
-{
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
-}
-
-- (void) createGiantScientistTimer
-{
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
-}
 
-- (void) createScoreTimer
-{
+    // Game Metrics
     _scoreTimer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
 }
 
-- (void) createAudioManager
+- (void) createManagers
 {
     _audioManager = [[AudioPlayerManager alloc] init];
-}
 
-- (void) createFilterManager
-{
     _filterManager = [[FilterManager alloc] initWithEffectNode: self];
 }
 
