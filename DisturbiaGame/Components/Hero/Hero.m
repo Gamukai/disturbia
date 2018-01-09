@@ -8,7 +8,20 @@
 
 #import "Hero.h"
 
+@interface Hero ()
+
+@property (nonatomic, assign) NSInteger jumpCounter;
+
+@end
+
 @implementation Hero
+
++ (instancetype) createNodeOn: (SKNode *) parent
+{
+    Hero *hero = [[Hero alloc] initWithParent: parent];
+    [parent addChild:hero];
+    return hero;
+}
 
 - (instancetype)initWithParent:(SKNode *)parentNode
 {
@@ -23,6 +36,7 @@
         self.physicsBody.categoryBitMask = heroType;
         self.physicsBody.contactTestBitMask = scientistType;
 
+        [self resetJumpCounter];
         [self animate];
     }
     return self;
@@ -51,13 +65,6 @@
                                       timePerFrame:0.02f
                                             resize:NO
                                            restore:YES]] withKey:@"runningHero"]; // WHAT?
-    }
-
-+ (id)createNodeOn:(SKNode *)parent
-{
-    id hero = [[Hero alloc] initWithParent: parent];
-    [parent addChild:hero];
-    return hero;
 }
 
 - (void)animateJump
@@ -101,26 +108,26 @@
                                           restore:YES] withKey:@"jumpingHero"];
     }
 
-- (void)jump:(NSUInteger)times andParent:(SKNode *)parentNode
+- (void) jumpWithParent: (SKNode *) parentNode
 {
-    if (times < 2)
+    if (_jumpCounter < 2)
     {
-        BOOL ipad;
-
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
-        ipad = YES; /* Device is iPad */
-        else
-        ipad = NO;
+        _jumpCounter++;
 
         self.physicsBody.velocity = CGVectorMake(0, 0);
 
-        if (ipad == YES)
-        [self.physicsBody applyImpulse:CGVectorMake(0, parentNode.frame.size.height * 0.23)];
-        else
+        BOOL ipad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : NO;
+        ipad == YES ?
+        [self.physicsBody applyImpulse:CGVectorMake(0, parentNode.frame.size.height * 0.23)] :
         [self.physicsBody applyImpulse:CGVectorMake(0, parentNode.frame.size.height * 0.08)];
 
         [self animateJump];
     }
+}
+
+- (void) resetJumpCounter
+{
+    _jumpCounter = 0;
 }
 
 #pragma mark - ContactListener

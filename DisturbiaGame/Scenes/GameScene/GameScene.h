@@ -49,7 +49,6 @@
 @property (nonatomic, strong) ScientistTimer *scientistTimer;
 @property (nonatomic, strong) GiantScientistTimer *giantScientistTimer;
 @property (nonatomic, strong) ScoreTimer *scoreTimer;
-@property (nonatomic, assign) NSUInteger countJump;
 @property (nonatomic, strong) AudioPlayerManager *audioManager;
 @property (nonatomic, strong) FilterManager *filterManager;
 

@@ -23,8 +23,6 @@
 
         self.data = [[PlistManager sharedManager] readFile];
 
-        self.countJump = 0;
-
         [self.physicsWorld setContactDelegate: self];
         [self setShouldEnableEffects:YES];
 
@@ -61,8 +59,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.hero jump:self.countJump andParent:self];
-    self.countJump++;
+    [_hero jumpWithParent: self];
 }
 
 #pragma mark - Creators
@@ -219,7 +216,7 @@
 
 - (void) groundDidTouched
 {
-    _countJump = 0;
+    [_hero resetJumpCounter];
 }
 
 #pragma mark - Orange Pickup Delegate

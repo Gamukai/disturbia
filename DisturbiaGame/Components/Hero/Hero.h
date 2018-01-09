@@ -12,10 +12,12 @@
 
 @interface Hero : SKSpriteNode <ContactListener>
 
-+ (id)createNodeOn:(SKNode *)parent;
++ (instancetype) createNodeOn: (SKNode *) parent;
 
 - (instancetype) initWithParent:(SKNode *)parentNode;
-- (void)update;
-- (void)jump:(NSUInteger)times andParent:(SKNode *)parentNode;
+
+- (void) jumpWithParent: (SKNode *) parentNode;
+
+- (void) resetJumpCounter;
 
 @end
