@@ -28,6 +28,7 @@
 #import "ScientistTimer.h"
 #import "GiantScientistTimer.h"
 #import "ScoreTimer.h"
+#import "AudioPlayerManager.h"
 #import "FilterManager.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate, ScoreTimerDelegate> {
@@ -41,7 +42,6 @@
 @property (nonatomic, assign) NSUInteger distance;
 @property (nonatomic, strong) Score *distanceLabel;
 @property (nonatomic, assign) NSUInteger insanity;
-@property (nonatomic, assign) NSUInteger insanityFamily;
 @property (nonatomic, assign) NSUInteger auxInsanity;
 @property (nonatomic, strong) InsanityBar *insanityBar;
 @property (nonatomic, strong) PauseLabel *pauseLabel;
@@ -50,8 +50,8 @@
 @property (nonatomic, strong) GiantScientistTimer *giantScientistTimer;
 @property (nonatomic, strong) ScoreTimer *scoreTimer;
 @property (nonatomic, assign) NSUInteger countJump;
+@property (nonatomic, strong) AudioPlayerManager *audioManager;
 @property (nonatomic, strong) FilterManager *filterManager;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 - (instancetype)initWithSize:(CGSize)size andDistance:(NSNumber *)distance andInsanity:(NSNumber *)insanity;
 

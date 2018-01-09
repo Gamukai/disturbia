@@ -24,7 +24,6 @@
         self.data = [[PlistManager sharedManager] readFile];
 
         self.countJump = 0;
-        self.insanityFamily = 0;
 
         [self.physicsWorld setContactDelegate: self];
         [self setShouldEnableEffects:YES];
@@ -77,6 +76,7 @@
     [self createScientistTimer];
     [self createGiantScientistTimer];
     [self createScoreTimer];
+    [self createAudioManager];
     [self createFilterManager];
     [self resetStoredValues];
 }
@@ -127,6 +127,11 @@
     _scoreTimer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
 }
 
+- (void) createAudioManager
+{
+    _audioManager = [[AudioPlayerManager alloc] init];
+}
+
 - (void) createFilterManager
 {
     _filterManager = [[FilterManager alloc] initWithEffectNode: self];
@@ -147,8 +152,7 @@
 {
     [self resetStoredValues];
 
-    [self.audioPlayer stop];
-    self.audioPlayer = nil;
+    [_audioManager stop];
 
     SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
     DeathScene *newScene = [DeathScene sceneWithSize: self.size];
@@ -157,52 +161,18 @@
 
 #pragma mark - Score and Death
 
-- (void)modifyInsanity
+- (void) modifyInsanity
 {
     if (self.insanity >= 100) [self die];
     else if (self.auxInsanity % 50 == 49)
     {
         self.auxInsanity = 0;
         self.insanity++;
-//        [self fxWillChange];
+        [_audioManager audioWillChangeWithOriginValue: _insanity];
         [_filterManager filterWillChangeWithOriginValue: _insanity];
         [self.insanityBar setProgress: self.insanity];
     }
     else self.auxInsanity++;
-}
-
-//- (void)fxWillChange
-//{
-//    if (self.insanity > 80 && self.insanityFamily != 6)
-//        [self updateFXWith: self.visualFX[4] andVolume: 0.1 andInsanityFamily: 6];
-//    else if (self.insanity > 60 && self.insanity < 81 && self.insanityFamily != 5)
-//        [self updateFXWith: self.visualFX[3] andVolume: 0.05 andInsanityFamily: 5];
-//    else if (self.insanity > 40 && self.insanity < 61 && self.insanityFamily != 4)
-//        [self updateFXWith: self.visualFX[2] andVolume: 0.1 andInsanityFamily: 4];
-//    else if (self.insanity > 25 && self.insanity < 41 && self.insanityFamily != 3)
-//        [self updateFXWith: self.visualFX[1] andVolume: 0.05 andInsanityFamily: 3];
-//    else if (self.insanity > 10 && self.insanity < 26 && self.insanityFamily != 2)
-//        [self updateFXWith: self.visualFX[0] andVolume: 0.1 andInsanityFamily: 2];
-//    else if(self.insanity < 11 && self.insanityFamily != 1)
-//        [self updateFXWith: @"0" andVolume: 1.0 andInsanityFamily: 1];
-//}
-
-- (void)updateFXWith:(NSString *)fx andVolume:(CGFloat)volume andInsanityFamily:(NSInteger)insanityFamily
-{
-    [self setFilter: [CIFilter filterWithName: [NSString stringWithFormat:@"%@", fx]]];
-
-    [self.audioPlayer setVolume: volume];
-    NSURL *url = [NSURL fileURLWithPath: [[NSBundle mainBundle]  pathForResource: [NSString stringWithFormat:@"%ld", insanityFamily - 1] ofType:@"wav"]];
-    [self setPlayerWith: url];
-
-    self.insanityFamily = insanityFamily;
-}
-
-- (void)setPlayerWith:(NSURL *)url
-{
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    self.audioPlayer.numberOfLoops = -1;
-    [self.audioPlayer play];
 }
 
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
@@ -233,7 +203,7 @@
 
     [self setPaused: NO];
     [self setUserInteractionEnabled:YES];
-    [self.audioPlayer play];
+    [_audioManager play];
 }
 
 - (void) pause
@@ -242,7 +212,7 @@
     _pauseLabel.text = @"PAUSED";
 
     [self setUserInteractionEnabled:NO];
-    [self.audioPlayer pause];
+    [_audioManager pause];
 }
 
 #pragma mark - Ground Delegate
