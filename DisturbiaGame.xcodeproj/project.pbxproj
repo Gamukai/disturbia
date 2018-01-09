@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5025AF820043BAF000AB275 /* AudioPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5025AF720043BAF000AB275 /* AudioPlayerManager.m */; };
 		B51834A92001E313008B9A67 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834A82001E313008B9A67 /* Score.m */; };
 		B51834AD200323A5008B9A67 /* EventTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834AC200323A5008B9A67 /* EventTimer.m */; };
 		B51834B120033A41008B9A67 /* OrangePickupTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B020033A41008B9A67 /* OrangePickupTimer.m */; };
@@ -62,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5025AF620043BAF000AB275 /* AudioPlayerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerManager.h; sourceTree = "<group>"; };
+		B5025AF720043BAF000AB275 /* AudioPlayerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerManager.m; sourceTree = "<group>"; };
 		B51834A320018098008B9A67 /* ContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		B51834A72001E313008B9A67 /* Score.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		B51834A82001E313008B9A67 /* Score.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
@@ -157,6 +160,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5025AF520043B35000AB275 /* AudioPlayerManager */ = {
+			isa = PBXGroup;
+			children = (
+				B5025AF620043BAF000AB275 /* AudioPlayerManager.h */,
+				B5025AF720043BAF000AB275 /* AudioPlayerManager.m */,
+			);
+			path = AudioPlayerManager;
+			sourceTree = "<group>";
+		};
 		B51834A220018071008B9A67 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				B51834AA2003236D008B9A67 /* EventTimer */,
+				B5025AF520043B35000AB275 /* AudioPlayerManager */,
 				B5453F42200417620092B260 /* FilterManager */,
 				B520E87F1F9999140086461C /* PlistManager */,
 			);
@@ -659,6 +672,7 @@
 				B520E8E21F999FC20086461C /* Ground.m in Sources */,
 				B5E05D372000660000D54212 /* Background.m in Sources */,
 				B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */,
+				B5025AF820043BAF000AB275 /* AudioPlayerManager.m in Sources */,
 				B520E8F21F99A52A0086461C /* Scientist.m in Sources */,
 				B520E8641F98ECA90086461C /* GameScene.m in Sources */,
 				B520E9061F9C34720086461C /* MenuScene.m in Sources */,
