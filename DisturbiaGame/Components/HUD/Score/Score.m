@@ -8,6 +8,12 @@
 
 #import "Score.h"
 
+@interface Score ()
+
+@property (nonatomic, strong) ScoreTimer *timer;
+
+@end
+
 @implementation Score
 
 + (instancetype) createNodeOnParent: (SKNode *) parentNode
@@ -26,6 +32,8 @@
         self.position = CGPointMake(parentNode.frame.size.width * 0.13, parentNode.frame.size.height - parentNode.frame.size.height * 0.2);
         self.text = [NSString stringWithFormat:@"0"];
         self.zPosition = 100;
+
+        _timer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
     }
     return self;
 }
@@ -33,6 +41,18 @@
 - (void) setNewScoreValue: (NSInteger) scoreValue
 {
     self.text = [NSString stringWithFormat: @"%ld", scoreValue];
+}
+
+- (void) update
+{
+    [_timer update];
+}
+
+#pragma mark - Score Timer Delegate
+
+- (void) ScoreEventDidOccurredWithScore: (NSInteger) score
+{
+    [self setNewScoreValue: score];
 }
 
 @end

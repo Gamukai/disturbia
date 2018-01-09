@@ -47,12 +47,12 @@
 
 - (void)update:(CFTimeInterval)currentTime
 {
+    [_scoreLabel update];
+    [self modifyInsanity];
+
     [_orangePickupTimer update];
     [_scientistTimer update];
     [_giantScientistTimer update];
-
-    [_scoreTimer update];
-    [self modifyInsanity];
 }
 
 #pragma mark - Touch events
@@ -87,7 +87,7 @@
 {
     _insanityBar = [InsanityBar createNodeOnParent: self];
 
-    _distanceLabel = [Score createNodeOnParent: self];
+    _scoreLabel = [Score createNodeOnParent: self];
 
     [PauseButton createNodeOnParent: self];
     _pauseLabel = [PauseLabel createNodeOnParent: self];
@@ -102,14 +102,10 @@
 
 - (void) createTimers
 {
-    // Components
     _orangePickupTimer = [OrangePickupTimer createNewOrangePickupTimerWithCounter: 0 andIntervalTopValue: 540 andIntervalBottomValue: 300 andDelegate: self];
 
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
-
-    // Game Metrics
-    _scoreTimer = [ScoreTimer createNewScoreTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
 }
 
 - (void) createManagers
@@ -247,13 +243,6 @@
 - (void) giantScientistEventDidOccurred
 {
     [GiantScientist createNodeOnParent: self];
-}
-
-#pragma mark - Score Timer Delegate
-
-- (void) ScoreEventDidOccurredWithScore: (NSInteger) score
-{
-    [_distanceLabel setNewScoreValue: score];
 }
 
 @end

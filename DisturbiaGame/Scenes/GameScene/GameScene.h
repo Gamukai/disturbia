@@ -27,11 +27,10 @@
 #import "OrangePickupTimer.h"
 #import "ScientistTimer.h"
 #import "GiantScientistTimer.h"
-#import "ScoreTimer.h"
 #import "AudioPlayerManager.h"
 #import "FilterManager.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate, ScoreTimerDelegate> {
+@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate> {
 
 }
 
@@ -40,7 +39,7 @@
 @property (nonatomic, strong) Hero *hero;
 @property (nonatomic, strong) NSMutableDictionary *data;
 @property (nonatomic, assign) NSUInteger distance;
-@property (nonatomic, strong) Score *distanceLabel;
+@property (nonatomic, strong) Score *scoreLabel;
 @property (nonatomic, assign) NSUInteger insanity;
 @property (nonatomic, assign) NSUInteger auxInsanity;
 @property (nonatomic, strong) InsanityBar *insanityBar;
@@ -48,7 +47,6 @@
 @property (nonatomic, strong) OrangePickupTimer *orangePickupTimer;
 @property (nonatomic, strong) ScientistTimer *scientistTimer;
 @property (nonatomic, strong) GiantScientistTimer *giantScientistTimer;
-@property (nonatomic, strong) ScoreTimer *scoreTimer;
 @property (nonatomic, strong) AudioPlayerManager *audioManager;
 @property (nonatomic, strong) FilterManager *filterManager;
 

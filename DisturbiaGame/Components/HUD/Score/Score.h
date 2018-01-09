@@ -7,13 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "ScoreTimer.h"
 
-@interface Score : SKLabelNode
+@interface Score : SKLabelNode <ScoreTimerDelegate>
 
 + (instancetype) createNodeOnParent: (SKNode *) parentNode;
 
 - (instancetype) initWithParent: (SKNode *) parentNode;
 
-- (void) setNewScoreValue: (NSInteger) scoreValue;
+- (void) update;
 
 @end
