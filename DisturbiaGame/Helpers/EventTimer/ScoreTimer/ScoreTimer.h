@@ -10,7 +10,7 @@
 
 @protocol ScoreTimerDelegate
 
-- (void) ScoreEventDidOccurredWithScore: (NSInteger) score;
+- (void) scoreEventDidOccurredWithScore: (NSInteger) score;
 
 @end
 

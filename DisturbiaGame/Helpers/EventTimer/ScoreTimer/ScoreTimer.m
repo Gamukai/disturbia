@@ -19,7 +19,7 @@
 
 - (void) eventDidOccurred
 {
-    if (_delegate) [_delegate ScoreEventDidOccurredWithScore: super.counter];
+    if (_delegate) [_delegate scoreEventDidOccurredWithScore: super.counter];
 }
 
 @end

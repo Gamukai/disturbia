@@ -50,7 +50,7 @@
 
 #pragma mark - Score Timer Delegate
 
-- (void) ScoreEventDidOccurredWithScore: (NSInteger) score
+- (void) scoreEventDidOccurredWithScore: (NSInteger) score
 {
     [self setNewScoreValue: score];
 }
