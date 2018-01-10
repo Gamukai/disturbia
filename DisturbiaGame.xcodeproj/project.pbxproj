@@ -58,6 +58,7 @@
 		B5453F45200417820092B260 /* FilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5453F44200417820092B260 /* FilterManager.m */; };
 		B5619F062005B7F100E65C0E /* InsanityHelperTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5619F052005B7F100E65C0E /* InsanityHelperTimer.m */; };
 		B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C1E2501FA7AF41007CD1BF /* Pickup.m */; };
+		B5D5AF112005C10D002D9CBF /* InsanityTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D5AF102005C10D002D9CBF /* InsanityTimer.m */; };
 		B5E05D3020001A2700D54212 /* OrangePickup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D2F20001A2700D54212 /* OrangePickup.m */; };
 		B5E05D33200056C000D54212 /* GiantScientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D32200056C000D54212 /* GiantScientist.m */; };
 		B5E05D372000660000D54212 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E05D362000660000D54212 /* Background.m */; };
@@ -144,6 +145,8 @@
 		B5619F052005B7F100E65C0E /* InsanityHelperTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsanityHelperTimer.m; sourceTree = "<group>"; };
 		B5C1E24F1FA7AF41007CD1BF /* Pickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pickup.h; sourceTree = "<group>"; };
 		B5C1E2501FA7AF41007CD1BF /* Pickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pickup.m; sourceTree = "<group>"; };
+		B5D5AF0F2005C10D002D9CBF /* InsanityTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsanityTimer.h; sourceTree = "<group>"; };
+		B5D5AF102005C10D002D9CBF /* InsanityTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsanityTimer.m; sourceTree = "<group>"; };
 		B5E05D2E20001A2700D54212 /* OrangePickup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrangePickup.h; sourceTree = "<group>"; };
 		B5E05D2F20001A2700D54212 /* OrangePickup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrangePickup.m; sourceTree = "<group>"; };
 		B5E05D31200056C000D54212 /* GiantScientist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiantScientist.h; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 				B51834B2200343EA008B9A67 /* ScientistTimer */,
 				B51834B620034A0C008B9A67 /* GiantScientistTimer */,
 				B5453F3E20035C8B0092B260 /* ScoreTimer */,
+				B5D5AF0E2005C0F3002D9CBF /* InsanityTimer */,
 				B5619F032005B76F00E65C0E /* InsanityHelperTimer */,
 				B51834AB200323A5008B9A67 /* EventTimer.h */,
 				B51834AC200323A5008B9A67 /* EventTimer.m */,
@@ -574,6 +578,15 @@
 			path = Pickup;
 			sourceTree = "<group>";
 		};
+		B5D5AF0E2005C0F3002D9CBF /* InsanityTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B5D5AF0F2005C10D002D9CBF /* InsanityTimer.h */,
+				B5D5AF102005C10D002D9CBF /* InsanityTimer.m */,
+			);
+			path = InsanityTimer;
+			sourceTree = "<group>";
+		};
 		B5E05D34200065D600D54212 /* Background */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +705,7 @@
 				B520E9061F9C34720086461C /* MenuScene.m in Sources */,
 				B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */,
 				B520E90A1F9C35650086461C /* DeathScene.m in Sources */,
+				B5D5AF112005C10D002D9CBF /* InsanityTimer.m in Sources */,
 				B520E8FA1F99A89D0086461C /* Hero.m in Sources */,
 				B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
