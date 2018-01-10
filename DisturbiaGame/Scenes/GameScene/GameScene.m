@@ -106,6 +106,7 @@
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
 
+    _insanityTimer = [InsanityTimer createNewInsanityTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
     _insanityHelperTimer = [InsanityHelperTimer createNewInsanityHelperTimerWithCounter: 0 andIntervalTopValue: 50 andIntervalBottomValue: 50 andDelegate: self];
 }
 
@@ -140,17 +141,16 @@
 
 #pragma mark - Score and Death
 
-- (void) checkInsanityState
+- (void) checkInsanityStateWithInsanity: (NSInteger) insanity
 {
-    _insanity > 99 ? [self die] : [self updateInsanityState];
+    insanity > 99 ? [self die] : [self updateInsanityStateWithInsanity: insanity];
 }
 
-- (void) updateInsanityState
+- (void) updateInsanityStateWithInsanity: (NSInteger) insanity
 {
-        _insanity++;
-        [_audioManager audioWillChangeWithOriginValue: _insanity];
-        [_filterManager filterWillChangeWithOriginValue: _insanity];
-        [_insanityBar setProgress: _insanity];
+        [_audioManager audioWillChangeWithOriginValue: insanity];
+        [_filterManager filterWillChangeWithOriginValue: insanity];
+        [_insanityBar setProgress: insanity];
 }
 
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
@@ -204,23 +204,21 @@
 
 - (void) orangePickupDidCollected
 {
-    _insanity = [self maxBetween: 0 and: _insanity - 15];
+    [_insanityTimer setCounter: [_insanityTimer getCounter] - 15];
 }
 
 #pragma mark - Scientist Delegate
 
 - (void) scientistDidContacted
 {
-    _insanity = _insanity + 20;
-    [self checkInsanityState];
+    [_insanityTimer setCounter: [_insanityTimer getCounter] + 20];
 }
 
 #pragma mark - Giant Scientist Delegate
 
 - (void) giantScientistDidContacted
 {
-    _insanity = _insanity + 40;
-    [self checkInsanityState];
+    [_insanityTimer setCounter: [_insanityTimer getCounter] + 40];
 }
 
 #pragma mark - Orange Picker Timer Delegate
@@ -246,9 +244,16 @@
 
 #pragma mark - Insanity Timer Delegate
 
+- (void) insanityEventDidOccurredWithValue: (NSInteger) value
+{
+    [self checkInsanityStateWithInsanity: value];
+}
+
+#pragma mark - Insanity Helper Timer Delegate
+
 - (void) insanityHelperEventDidOccurred
 {
-    [self checkInsanityState];
+    [_insanityTimer update];
 }
 
 @end

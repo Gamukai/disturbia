@@ -27,11 +27,12 @@
 #import "OrangePickupTimer.h"
 #import "ScientistTimer.h"
 #import "GiantScientistTimer.h"
+#import "InsanityTimer.h"
 #import "InsanityHelperTimer.h"
 #import "AudioPlayerManager.h"
 #import "FilterManager.h"
 
-@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate, InsanityHelperTimerDelegate> {
+@interface GameScene : SKScene <SKPhysicsContactDelegate, PauseButtonDelegate, GroundDelegate, OrangePickupDelegate, ScientistDelegate, GiantScientistDelegate, OrangePickupTimerDelegate, ScientistTimerDelegate, GiantScientistTimerDelegate, InsanityTimerDelegate, InsanityHelperTimerDelegate> {
 
 }
 
@@ -47,6 +48,7 @@
 @property (nonatomic, strong) OrangePickupTimer *orangePickupTimer;
 @property (nonatomic, strong) ScientistTimer *scientistTimer;
 @property (nonatomic, strong) GiantScientistTimer *giantScientistTimer;
+@property (nonatomic, strong) InsanityTimer *insanityTimer;
 @property (nonatomic, strong) InsanityHelperTimer *insanityHelperTimer;
 @property (nonatomic, strong) AudioPlayerManager *audioManager;
 @property (nonatomic, strong) FilterManager *filterManager;
