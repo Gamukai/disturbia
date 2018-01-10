@@ -40,7 +40,6 @@
     self.distance = [[self.data objectForKey:@"Distance"] integerValue];
 
     self.insanity = [self maxBetween:0 and:[[self.data objectForKey:@"Insanity"] integerValue]];
-    [self modifyInsanity];
 
     [self play];
 }
@@ -48,7 +47,7 @@
 - (void)update:(CFTimeInterval)currentTime
 {
     [_scoreLabel update];
-    [self modifyInsanity];
+    [_insanityHelperTimer update];
 
     [_orangePickupTimer update];
     [_scientistTimer update];
@@ -106,6 +105,8 @@
 
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
+
+    _insanityHelperTimer = [InsanityHelperTimer createNewInsanityHelperTimerWithCounter: 0 andIntervalTopValue: 50 andIntervalBottomValue: 50 andDelegate: self];
 }
 
 - (void) createManagers
@@ -138,15 +139,6 @@
 }
 
 #pragma mark - Score and Death
-
-- (void) modifyInsanity
-{
-    if (_auxInsanity % 50 == 49)
-    {
-        _auxInsanity = 0;
-        [self checkInsanityState];
-    } else _auxInsanity++;
-}
 
 - (void) checkInsanityState
 {
@@ -250,6 +242,13 @@
 - (void) giantScientistEventDidOccurred
 {
     [GiantScientist createNodeOnParent: self];
+}
+
+#pragma mark - Insanity Timer Delegate
+
+- (void) insanityHelperEventDidOccurred
+{
+    [self checkInsanityState];
 }
 
 @end
