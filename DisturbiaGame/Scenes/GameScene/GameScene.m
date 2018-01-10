@@ -213,7 +213,6 @@
 - (void) orangePickupDidCollected
 {
     _insanity = [self maxBetween: 0 and: _insanity - 15];
-    [self modifyInsanity];
 }
 
 #pragma mark - Scientist Delegate
@@ -221,7 +220,7 @@
 - (void) scientistDidContacted
 {
     _insanity = _insanity + 20;
-    [self modifyInsanity];
+    [self checkInsanityState];
 }
 
 #pragma mark - Giant Scientist Delegate
@@ -229,7 +228,7 @@
 - (void) giantScientistDidContacted
 {
     _insanity = _insanity + 40;
-    [self modifyInsanity];
+    [self checkInsanityState];
 }
 
 #pragma mark - Orange Picker Timer Delegate
