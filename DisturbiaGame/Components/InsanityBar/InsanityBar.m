@@ -10,12 +10,13 @@
 
 @implementation InsanityBar
 
-+ (instancetype) createNodeOnParent:(SKNode *)parentNode
++ (instancetype) createNodeOnParent: (SKNode<InsanityBarDelegate> *) parentNode
 {
     InsanityBar *insanityBar = [[InsanityBar alloc] initWithParent: parentNode];
     SKSpriteNode *insanityBarBackground = [InsanityBar createInsanityBarBackgroundWithParent: parentNode];
     [parentNode addChild: insanityBar];
     [parentNode addChild: insanityBarBackground];
+    insanityBar.delegate = parentNode;
     return insanityBar;
 }
 
@@ -33,6 +34,9 @@
         SKSpriteNode *layer = [SKSpriteNode spriteNodeWithTexture: texture size: CGSizeMake(parentNode.frame.size.width, parentNode.frame.size.height * 0.1)];
         layer.anchorPoint = CGPointMake(1.0, 0.0);
 
+        _insanityTimer = [InsanityTimer createNewInsanityTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
+        _insanityHelperTimer = [InsanityHelperTimer createNewInsanityHelperTimerWithCounter: 0 andIntervalTopValue: 50 andIntervalBottomValue: 50 andDelegate: self];
+
         [self addChild: layer];
     }
     return self;
@@ -48,9 +52,24 @@
     return layerInsanity;
 }
 
-- (void) setProgress: (CGFloat) progress
+- (void) setProgress: (NSInteger) progress
 {
     self.maskNode.xScale = 100 - progress;
+}
+
+#pragma mark - Insanity Timer Delegate
+
+- (void) insanityEventDidOccurredWithValue: (NSInteger) value
+{
+    if (_delegate) value > 99 ? [_delegate maxValueUpdate] : [_delegate updateWithInsanity: value];
+}
+
+#pragma mark - Insanity Helper Timer Delegate
+
+- (void) insanityHelperEventDidOccurred
+{
+    [_insanityTimer update];
+    [self setProgress: _insanityTimer.counter];
 }
 
 @end

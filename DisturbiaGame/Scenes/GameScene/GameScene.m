@@ -47,7 +47,7 @@
 - (void)update:(CFTimeInterval)currentTime
 {
     [_scoreLabel update];
-    [_insanityHelperTimer update];
+    [_insanityBar.insanityHelperTimer update];
 
     [_orangePickupTimer update];
     [_scientistTimer update];
@@ -105,9 +105,6 @@
 
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
     _giantScientistTimer = [GiantScientistTimer createNewGiantScientistTimerWithCounter: 0 andIntervalTopValue: 300 andIntervalBottomValue: 120 andDelegate: self];
-
-    _insanityTimer = [InsanityTimer createNewInsanityTimerWithCounter: 0 andIntervalTopValue: 1 andIntervalBottomValue: 1 andDelegate: self];
-    _insanityHelperTimer = [InsanityHelperTimer createNewInsanityHelperTimerWithCounter: 0 andIntervalTopValue: 50 andIntervalBottomValue: 50 andDelegate: self];
 }
 
 - (void) createManagers
@@ -126,7 +123,7 @@
     [[PlistManager sharedManager] writeFileWith: self.data];
 }
 
-#pragma mark - Actions
+#pragma mark - Score and Death
 
 - (void)die
 {
@@ -137,20 +134,6 @@
     SKTransition *reveal = [SKTransition fadeWithDuration:.5f];
     DeathScene *newScene = [DeathScene sceneWithSize: self.size];
     [self.scene.view presentScene: newScene transition: reveal];
-}
-
-#pragma mark - Score and Death
-
-- (void) checkInsanityStateWithInsanity: (NSInteger) insanity
-{
-    insanity > 99 ? [self die] : [self updateInsanityStateWithInsanity: insanity];
-}
-
-- (void) updateInsanityStateWithInsanity: (NSInteger) insanity
-{
-        [_audioManager audioWillChangeWithOriginValue: insanity];
-        [_filterManager filterWillChangeWithOriginValue: insanity];
-        [_insanityBar setProgress: insanity];
 }
 
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
@@ -204,21 +187,21 @@
 
 - (void) orangePickupDidCollected
 {
-    [_insanityTimer setCounter: [_insanityTimer getCounter] - 15];
+    [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] - 15];
 }
 
 #pragma mark - Scientist Delegate
 
 - (void) scientistDidContacted
 {
-    [_insanityTimer setCounter: [_insanityTimer getCounter] + 20];
+    [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] + 20];
 }
 
 #pragma mark - Giant Scientist Delegate
 
 - (void) giantScientistDidContacted
 {
-    [_insanityTimer setCounter: [_insanityTimer getCounter] + 40];
+    [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] + 40];
 }
 
 #pragma mark - Orange Picker Timer Delegate
@@ -242,18 +225,17 @@
     [GiantScientist createNodeOnParent: self];
 }
 
-#pragma mark - Insanity Timer Delegate
+#pragma mark - Insanity Bar Delegate
 
-- (void) insanityEventDidOccurredWithValue: (NSInteger) value
+- (void) updateWithInsanity: (NSInteger) insanity
 {
-    [self checkInsanityStateWithInsanity: value];
+    [_audioManager audioWillChangeWithOriginValue: insanity];
+    [_filterManager filterWillChangeWithOriginValue: insanity];
 }
 
-#pragma mark - Insanity Helper Timer Delegate
-
-- (void) insanityHelperEventDidOccurred
+- (void) maxValueUpdate
 {
-    [_insanityTimer update];
+    [self die];
 }
 
 @end
