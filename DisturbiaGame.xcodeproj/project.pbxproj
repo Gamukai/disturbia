@@ -187,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				B51834A52001E2FD008B9A67 /* Score */,
+				B520E8EB1F99A3CD0086461C /* InsanityBar */,
+				B520E8E71F99A2800086461C /* PauseButton */,
+				B520E8E31F99A1580086461C /* PauseLabel */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -203,14 +206,13 @@
 		B51834AA2003236D008B9A67 /* EventTimer */ = {
 			isa = PBXGroup;
 			children = (
+				B5B25A952005E6E800DCDAC0 /* StandardTimer */,
 				B51834AE20033886008B9A67 /* OrangePickupTimer */,
 				B51834B2200343EA008B9A67 /* ScientistTimer */,
 				B51834B620034A0C008B9A67 /* GiantScientistTimer */,
 				B5453F3E20035C8B0092B260 /* ScoreTimer */,
 				B5D5AF0E2005C0F3002D9CBF /* InsanityTimer */,
 				B5619F032005B76F00E65C0E /* InsanityHelperTimer */,
-				B51834AB200323A5008B9A67 /* EventTimer.h */,
-				B51834AC200323A5008B9A67 /* EventTimer.m */,
 			);
 			path = EventTimer;
 			sourceTree = "<group>";
@@ -412,9 +414,6 @@
 				B5C1E24E1FA7AF27007CD1BF /* Pickup */,
 				B520E8F71F99A87D0086461C /* Hero */,
 				B520E8EF1F99A50C0086461C /* ObstacleScientist */,
-				B520E8EB1F99A3CD0086461C /* InsanityBar */,
-				B520E8E71F99A2800086461C /* PauseButton */,
-				B520E8E31F99A1580086461C /* PauseLabel */,
 				B5E05D34200065D600D54212 /* Background */,
 				B520E8DF1F999F9E0086461C /* Ground */,
 				B520E8FB1F99A90B0086461C /* PuzzleLight */,
@@ -565,6 +564,15 @@
 				B5619F052005B7F100E65C0E /* InsanityHelperTimer.m */,
 			);
 			path = InsanityHelperTimer;
+			sourceTree = "<group>";
+		};
+		B5B25A952005E6E800DCDAC0 /* StandardTimer */ = {
+			isa = PBXGroup;
+			children = (
+				B51834AB200323A5008B9A67 /* EventTimer.h */,
+				B51834AC200323A5008B9A67 /* EventTimer.m */,
+			);
+			path = StandardTimer;
 			sourceTree = "<group>";
 		};
 		B5C1E24E1FA7AF27007CD1BF /* Pickup */ = {
