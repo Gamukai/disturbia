@@ -141,16 +141,24 @@
 
 - (void) modifyInsanity
 {
-    if (self.insanity >= 100) [self die];
-    else if (self.auxInsanity % 50 == 49)
+    if (_auxInsanity % 50 == 49)
     {
-        self.auxInsanity = 0;
-        self.insanity++;
+        _auxInsanity = 0;
+        [self checkInsanityState];
+    } else _auxInsanity++;
+}
+
+- (void) checkInsanityState
+{
+    _insanity > 99 ? [self die] : [self updateInsanityState];
+}
+
+- (void) updateInsanityState
+{
+        _insanity++;
         [_audioManager audioWillChangeWithOriginValue: _insanity];
         [_filterManager filterWillChangeWithOriginValue: _insanity];
-        [self.insanityBar setProgress: self.insanity];
-    }
-    else self.auxInsanity++;
+        [_insanityBar setProgress: _insanity];
 }
 
 - (NSInteger)maxBetween:(NSInteger)a and:(NSInteger)b
