@@ -21,7 +21,7 @@
 
 @property (weak) id<PauseButtonDelegate> delegate;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode;
++ (instancetype) createNodeOnParent: (SKNode<PauseButtonDelegate> *) parentNode;
 
 - (instancetype) initWithParent: (SKNode *) parentNode;
 

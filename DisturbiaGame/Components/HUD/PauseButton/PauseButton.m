@@ -16,7 +16,7 @@
 
 @implementation PauseButton
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode
++ (instancetype) createNodeOnParent: (SKNode<PauseButtonDelegate> *) parentNode
 {
     PauseButton *pauseButton = [[PauseButton alloc] initWithParent: parentNode];
     pauseButton.delegate = parentNode;

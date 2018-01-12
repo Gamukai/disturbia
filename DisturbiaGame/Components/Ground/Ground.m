@@ -12,7 +12,7 @@
 
 static const CGFloat duration = 5.0;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode
++ (instancetype) createNodeOnParent: (SKNode<GroundDelegate> *) parentNode
 {
     Ground* ground = [[Ground alloc] initWithParent: parentNode];
     ground.delegate = parentNode;

@@ -13,8 +13,7 @@
 static const CGFloat finalPosition = -50;
 static const CGFloat duration = 4.0;
 
-
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode
++ (instancetype) createNodeOnParent: (SKNode<OrangePickupDelegate> *) parentNode
 {
     OrangePickup* pickup = [[OrangePickup alloc] initWithParent: parentNode];
     pickup.delegate = parentNode;

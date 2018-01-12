@@ -20,7 +20,7 @@
 
 @property (nonatomic, assign) id<ScientistDelegate> delegate;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode;
++ (instancetype) createNodeOnParent: (SKNode<ScientistDelegate> *) parentNode;
 - (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end

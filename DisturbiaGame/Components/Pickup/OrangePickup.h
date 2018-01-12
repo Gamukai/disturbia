@@ -21,7 +21,7 @@
 
 @property (nonatomic, assign) id<OrangePickupDelegate> delegate;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode;
++ (instancetype) createNodeOnParent: (SKNode<OrangePickupDelegate> *) parentNode;
 
 - (instancetype) initWithParent: (SKNode *) parentNode;
 

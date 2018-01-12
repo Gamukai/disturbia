@@ -13,7 +13,7 @@
 static const CGFloat finalPosition = -50;
 static const CGFloat duration = 6.0;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode
++ (instancetype) createNodeOnParent: (SKNode<ScientistDelegate> *) parentNode
 {
     Scientist* scientist = [[Scientist alloc] initWithParent: parentNode];
     scientist.delegate = parentNode;

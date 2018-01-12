@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong) id<GroundDelegate> delegate;
 
-+ (instancetype) createNodeOnParent: (SKNode *) parentNode;
++ (instancetype) createNodeOnParent: (SKNode<GroundDelegate> *) parentNode;
 - (instancetype) initWithParent: (SKNode *) parentNode;
 
 @end
