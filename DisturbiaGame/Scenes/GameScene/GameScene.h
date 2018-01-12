@@ -9,7 +9,6 @@
 @import AVFoundation;
 #import <SpriteKit/SpriteKit.h>
 #import "MenuScene.h"
-#import "PuzzleScene.h"
 #import "DeathScene.h"
 #import "Constants.h"
 #import "Background.h"

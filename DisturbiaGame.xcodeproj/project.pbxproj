@@ -15,7 +15,6 @@
 		B51834B920034A2D008B9A67 /* GiantScientistTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B51834B820034A2D008B9A67 /* GiantScientistTimer.m */; };
 		B520E85D1F98ECA90086461C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E85C1F98ECA90086461C /* AppDelegate.m */; };
 		B520E85F1F98ECA90086461C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E85E1F98ECA90086461C /* GameScene.sks */; };
-		B520E8611F98ECA90086461C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E8601F98ECA90086461C /* Actions.sks */; };
 		B520E8641F98ECA90086461C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8631F98ECA90086461C /* GameScene.m */; };
 		B520E8671F98ECA90086461C /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8661F98ECA90086461C /* GameViewController.m */; };
 		B520E86A1F98ECA90086461C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B520E8681F98ECA90086461C /* Main.storyboard */; };
@@ -47,13 +46,9 @@
 		B520E8EE1F99A3F20086461C /* InsanityBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8ED1F99A3F20086461C /* InsanityBar.m */; };
 		B520E8F21F99A52A0086461C /* Scientist.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F11F99A52A0086461C /* Scientist.m */; };
 		B520E8FA1F99A89D0086461C /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8F91F99A89D0086461C /* Hero.m */; };
-		B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E8FD1F99A93C0086461C /* PuzzleLight.m */; };
 		B520E9021F9A41B80086461C /* CutscenePrologue.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9011F9A41B80086461C /* CutscenePrologue.m */; };
 		B520E9061F9C34720086461C /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9051F9C34720086461C /* MenuScene.m */; };
 		B520E90A1F9C35650086461C /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E9091F9C35650086461C /* DeathScene.m */; };
-		B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B520E90D1F9C37250086461C /* PuzzleScene.m */; };
-		B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = B520E9111F9D8E9E0086461C /* Smoke.sks */; };
-		B520E9141F9D8E9E0086461C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = B520E9121F9D8E9E0086461C /* spark.png */; };
 		B5453F4120035CB50092B260 /* ScoreTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5453F4020035CB50092B260 /* ScoreTimer.m */; };
 		B5453F45200417820092B260 /* FilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5453F44200417820092B260 /* FilterManager.m */; };
 		B5619F062005B7F100E65C0E /* InsanityHelperTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B5619F052005B7F100E65C0E /* InsanityHelperTimer.m */; };
@@ -82,7 +77,6 @@
 		B520E85B1F98ECA90086461C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B520E85C1F98ECA90086461C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B520E85E1F98ECA90086461C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		B520E8601F98ECA90086461C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		B520E8621F98ECA90086461C /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		B520E8631F98ECA90086461C /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		B520E8651F98ECA90086461C /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -125,18 +119,12 @@
 		B520E8F11F99A52A0086461C /* Scientist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scientist.m; sourceTree = "<group>"; };
 		B520E8F81F99A89D0086461C /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		B520E8F91F99A89D0086461C /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
-		B520E8FC1F99A93C0086461C /* PuzzleLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleLight.h; sourceTree = "<group>"; };
-		B520E8FD1F99A93C0086461C /* PuzzleLight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleLight.m; sourceTree = "<group>"; };
 		B520E9001F9A41B80086461C /* CutscenePrologue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CutscenePrologue.h; sourceTree = "<group>"; };
 		B520E9011F9A41B80086461C /* CutscenePrologue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CutscenePrologue.m; sourceTree = "<group>"; };
 		B520E9041F9C34720086461C /* MenuScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		B520E9051F9C34720086461C /* MenuScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		B520E9081F9C35650086461C /* DeathScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
 		B520E9091F9C35650086461C /* DeathScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
-		B520E90C1F9C37250086461C /* PuzzleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PuzzleScene.h; sourceTree = "<group>"; };
-		B520E90D1F9C37250086461C /* PuzzleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleScene.m; sourceTree = "<group>"; };
-		B520E9111F9D8E9E0086461C /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
-		B520E9121F9D8E9E0086461C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		B5453F3F20035CB50092B260 /* ScoreTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreTimer.h; sourceTree = "<group>"; };
 		B5453F4020035CB50092B260 /* ScoreTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreTimer.m; sourceTree = "<group>"; };
 		B5453F43200417820092B260 /* FilterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterManager.h; sourceTree = "<group>"; };
@@ -265,14 +253,12 @@
 			isa = PBXGroup;
 			children = (
 				B51834A220018071008B9A67 /* Protocols */,
-				B520E90F1F9D8D190086461C /* Effects */,
 				B520E8DE1F999F8F0086461C /* Components */,
 				B520E87C1F99980D0086461C /* Helpers */,
 				B520E87A1F9994DA0086461C /* Scenes */,
 				B520E8781F98EEA80086461C /* Controllers */,
 				B520E85B1F98ECA90086461C /* AppDelegate.h */,
 				B520E85C1F98ECA90086461C /* AppDelegate.m */,
-				B520E8601F98ECA90086461C /* Actions.sks */,
 				B520E8681F98ECA90086461C /* Main.storyboard */,
 				B520E86B1F98ECA90086461C /* Assets.xcassets */,
 				B520E86D1F98ECA90086461C /* LaunchScreen.storyboard */,
@@ -304,7 +290,6 @@
 		B520E87A1F9994DA0086461C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B520E90B1F9C37110086461C /* PuzzleScene */,
 				B520E9071F9C35550086461C /* DeathScene */,
 				B520E9031F9C34600086461C /* MenuScene */,
 				B520E8FF1F9A419C0086461C /* CutscenePrologue */,
@@ -416,7 +401,6 @@
 				B520E8EF1F99A50C0086461C /* ObstacleScientist */,
 				B5E05D34200065D600D54212 /* Background */,
 				B520E8DF1F999F9E0086461C /* Ground */,
-				B520E8FB1F99A90B0086461C /* PuzzleLight */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -477,15 +461,6 @@
 			path = Hero;
 			sourceTree = "<group>";
 		};
-		B520E8FB1F99A90B0086461C /* PuzzleLight */ = {
-			isa = PBXGroup;
-			children = (
-				B520E8FC1F99A93C0086461C /* PuzzleLight.h */,
-				B520E8FD1F99A93C0086461C /* PuzzleLight.m */,
-			);
-			path = PuzzleLight;
-			sourceTree = "<group>";
-		};
 		B520E8FF1F9A419C0086461C /* CutscenePrologue */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,32 +486,6 @@
 				B520E9091F9C35650086461C /* DeathScene.m */,
 			);
 			path = DeathScene;
-			sourceTree = "<group>";
-		};
-		B520E90B1F9C37110086461C /* PuzzleScene */ = {
-			isa = PBXGroup;
-			children = (
-				B520E90C1F9C37250086461C /* PuzzleScene.h */,
-				B520E90D1F9C37250086461C /* PuzzleScene.m */,
-			);
-			path = PuzzleScene;
-			sourceTree = "<group>";
-		};
-		B520E90F1F9D8D190086461C /* Effects */ = {
-			isa = PBXGroup;
-			children = (
-				B520E9101F9D8D2C0086461C /* Smoke */,
-			);
-			path = Effects;
-			sourceTree = "<group>";
-		};
-		B520E9101F9D8D2C0086461C /* Smoke */ = {
-			isa = PBXGroup;
-			children = (
-				B520E9111F9D8E9E0086461C /* Smoke.sks */,
-				B520E9121F9D8E9E0086461C /* spark.png */,
-			);
-			path = Smoke;
 			sourceTree = "<group>";
 		};
 		B5453F3E20035C8B0092B260 /* ScoreTimer */ = {
@@ -680,13 +629,10 @@
 				B520E8C81F999D780086461C /* pink.mp3 in Resources */,
 				B520E8C61F999D780086461C /* purple.mp3 in Resources */,
 				B520E86F1F98ECA90086461C /* LaunchScreen.storyboard in Resources */,
-				B520E8611F98ECA90086461C /* Actions.sks in Resources */,
 				B520E8B81F999D6A0086461C /* 8-BIT WONDER.TTF in Resources */,
-				B520E9141F9D8E9E0086461C /* spark.png in Resources */,
 				B520E8BC1F999D720086461C /* intro.wav in Resources */,
 				B520E8C71F999D780086461C /* turquoise.mp3 in Resources */,
 				B520E8BE1F999D720086461C /* tap.mp3 in Resources */,
-				B520E9131F9D8E9E0086461C /* Smoke.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +646,6 @@
 				B5453F4120035CB50092B260 /* ScoreTimer.m in Sources */,
 				B5C1E2511FA7AF41007CD1BF /* Pickup.m in Sources */,
 				B51834B920034A2D008B9A67 /* GiantScientistTimer.m in Sources */,
-				B520E90E1F9C37250086461C /* PuzzleScene.m in Sources */,
 				B5453F45200417820092B260 /* FilterManager.m in Sources */,
 				B5619F062005B7F100E65C0E /* InsanityHelperTimer.m in Sources */,
 				B51834B520034407008B9A67 /* ScientistTimer.m in Sources */,
@@ -717,7 +662,6 @@
 				B520E8FA1F99A89D0086461C /* Hero.m in Sources */,
 				B520E8EA1F99A2FB0086461C /* PauseButton.m in Sources */,
 				B520E8821F9999310086461C /* PlistManager.m in Sources */,
-				B520E8FE1F99A93C0086461C /* PuzzleLight.m in Sources */,
 				B520E8671F98ECA90086461C /* GameViewController.m in Sources */,
 				B520E8E61F99A16A0086461C /* PauseLabel.m in Sources */,
 				B520E8721F98ECA90086461C /* main.m in Sources */,
