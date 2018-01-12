@@ -49,6 +49,7 @@
     [_scoreLabel update];
     [_insanityBar.insanityHelperTimer update];
 
+    [_greenPickupTimer update];
     [_orangePickupTimer update];
     [_scientistTimer update];
     [_giantScientistTimer update];
@@ -101,6 +102,7 @@
 
 - (void) createTimers
 {
+    _greenPickupTimer = [GreenPickupTimer createNewGreenPickupTimerWithCounter: 0 andIntervalTopValue: 440 andIntervalBottomValue: 200 andDelegate: self];
     _orangePickupTimer = [OrangePickupTimer createNewOrangePickupTimerWithCounter: 0 andIntervalTopValue: 540 andIntervalBottomValue: 300 andDelegate: self];
 
     _scientistTimer = [ScientistTimer createNewScientistTimerWithCounter: 0 andIntervalTopValue: 200 andIntervalBottomValue: 90 andDelegate: self];
@@ -183,42 +185,48 @@
     [_hero resetJumpCounter];
 }
 
-#pragma mark - Orange Pickup Delegate
+#pragma mark - Pickup Delegates
+
+- (void) greenPickupDidCollected
+{
+    [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] - 10];
+}
 
 - (void) orangePickupDidCollected
 {
     [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] - 15];
 }
 
-#pragma mark - Scientist Delegate
+#pragma mark - Scientist Delegates
 
 - (void) scientistDidContacted
 {
     [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] + 20];
 }
 
-#pragma mark - Giant Scientist Delegate
-
 - (void) giantScientistDidContacted
 {
     [_insanityBar.insanityTimer setCounter: [_insanityBar.insanityTimer getCounter] + 40];
 }
 
-#pragma mark - Orange Picker Timer Delegate
+#pragma mark - Pickup Timer Delegates
+
+- (void) greenPickupEventDidOccurred
+{
+    [GreenPickup createNodeOnParent: self];
+}
 
 - (void) orangePickupEventDidOccurred
 {
     [OrangePickup createNodeOnParent: self];
 }
 
-#pragma mark - Scientist Timer Delegate
+#pragma mark - Scientist Timer Delegates
 
 - (void) scientistEventDidOccurred
 {
     [Scientist createNodeOnParent: self];
 }
-
-#pragma mark - Giant Scientist Timer Delegate
 
 - (void) giantScientistEventDidOccurred
 {
