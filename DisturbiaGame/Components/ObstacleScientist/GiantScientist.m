@@ -61,7 +61,7 @@ static const CGFloat duration = 6.0;
 {
     if (otherNode)
     {
-        [self.parent runAction: [SKAction playSoundFileNamed:@"green" waitForCompletion: NO]];
+        [self.parent runAction: [SKAction playSoundFileNamed:@"yellow" waitForCompletion: NO]];
         [self removeFromParent];
         if (_delegate) [_delegate giantScientistDidContacted];
     }
